@@ -16,14 +16,13 @@ class CriaCliente extends Migration
         Schema::create('cliente', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('telefone');
-            $table->string('estado');
-            $table->string('cidade');
-            $table->string('bairro');
-            $table->string('rua');
-            $table->string('numero')->nullable();
-            $table->string('complemento')->nullable();
-;
+            $table->string('telefone', 15);
+            $table->string('estado', 2);
+            $table->string('cidade', 45);
+            $table->string('bairro', 45);
+            $table->string('rua', 80);
+            $table->string('numero', 5)->nullable();
+            $table->string('complemento', 45)->nullable();
         });
     }
 
