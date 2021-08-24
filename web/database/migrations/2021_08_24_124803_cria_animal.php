@@ -15,15 +15,15 @@ class CriaAnimal extends Migration
     {
         Schema::create('animal', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
-                $table->unsignedBigInteger('especie_id');
-            	$table->foreign('especie_id')->references('id')->on('especie');
-            $table->string('raca');
-            $table->string('sexo');
-            $table->string('cor');
+            $table->string('nome', 45);
+            $table->unsignedBigInteger('especie_id');
+            $table->foreign('especie_id')->references('id')->on('especie');
+            $table->string('raca')->nullable();
+            $table->tinyInteger('sexo');
+            $table->string('cor', 45);
             $table->date('nascimento');
-                $table->unsignedBigInteger('cliente_id');
-            	$table->foreign('cliente_id')->references('id')->on('cliente');
+            $table->unsignedBigInteger('cliente_id');
+            $table->foreign('cliente_id')->references('id')->on('cliente');
             $table->timestamps();
             $table->softDeletes();
 ;

@@ -15,7 +15,7 @@ class CriaEspecie extends Migration
     {
         Schema::create('especie', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome');
+            $table->string('nome', 45);
             $table->text('descricao')->nullable();
         });
     }
