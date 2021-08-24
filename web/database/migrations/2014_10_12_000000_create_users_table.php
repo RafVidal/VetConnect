@@ -17,12 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('email', 100)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password', 45);
+            $table->string('password', 75);
             $table->unsignedBigInteger('cliente_id')->nullable();
             $table->foreign('cliente_id')->references('id')->on('cliente');
             $table->unsignedBigInteger('veterinario_id')->nullable();
             $table->foreign('veterinario_id')->references('id')->on('veterinario');
-            $table->boolean('clinica');
+            $table->boolean('veterinario');
             $table->boolean('cliente');
             $table->rememberToken();
             $table->timestamps();
