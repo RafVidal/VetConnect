@@ -15,5 +15,13 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(VeterinarioSeeder::class);
+        $this->call(ClienteSeeder::class);
+        $this->call(EspecieSeeder::class);
+        $this->call(AnimalSeeder::class);
+        $this->call(MedicacaoSeeder::class);
+        $this->call(VacinaSeeder::class);
+        $this->call(CartaoDeVacinacaoSeeder::class);
+        $this->call(AvaliacaoSeeder::class);
+        $this->call(VeterinarioVacinaSeeder::class);
     }
 }

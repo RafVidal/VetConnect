@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Medicacao;
+use \Carbon\Carbon;
 
 
 class MedicacaoSeeder extends Seeder
@@ -24,6 +25,6 @@ class MedicacaoSeeder extends Seeder
         $medicacao->animal_id           = 1;
         $medicacao->veterinario_id      = 1;
         $medicacao->save();
-        
+
     }
 }

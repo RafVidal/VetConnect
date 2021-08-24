@@ -21,7 +21,7 @@ class CriaAvaliacao extends Migration
             $table->boolean('avaliacao');
             $table->string('descricao',200);
             $table->timestamps();
-           
+
         });
     }
 
