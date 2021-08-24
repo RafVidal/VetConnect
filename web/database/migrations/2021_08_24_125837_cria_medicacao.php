@@ -23,7 +23,7 @@ class CriaMedicacao extends Migration
             	$table->foreign('animal_id')->references('id')->on('animal');
                 $table->unsignedBigInteger('veterinario_id');
             	$table->foreign('veterinario_id')->references('id')->on('veterinario');
-;
+
         });
     }
 
