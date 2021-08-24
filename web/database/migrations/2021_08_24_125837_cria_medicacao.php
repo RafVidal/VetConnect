@@ -15,14 +15,14 @@ class CriaMedicacao extends Migration
     {
         Schema::create('medicacao', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('medicacao');
-            $table->string('intervalo');
-            $table->string('descricao');
-            $table->date('data_fim');
-                $table->unsignedBigInteger('animal_id');
-            	$table->foreign('animal_id')->references('id')->on('animal');
-                $table->unsignedBigInteger('veterinario_id');
-            	$table->foreign('veterinario_id')->references('id')->on('veterinario');
+            $table->string('medicacao', 45);
+            $table->integer('intervalo');
+            $table->text('descricao');
+            $table->datetime('data_fim');
+            $table->unsignedBigInteger('animal_id');
+            $table->foreign('animal_id')->references('id')->on('animal');
+            $table->unsignedBigInteger('veterinario_id');
+            $table->foreign('veterinario_id')->references('id')->on('veterinario');
 
         });
     }
