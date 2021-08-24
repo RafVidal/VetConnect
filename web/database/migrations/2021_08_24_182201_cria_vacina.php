@@ -13,12 +13,12 @@ class CriaVacina extends Migration
      */
     public function up()
     {
-        Schema::create('cartao_de_vacinacao', function (Blueprint $table) {
+        Schema::create('vacina', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 45);
             $table->text('descricao');
             $table->boolean('obrigatoria');
-           
+
         });
     }
 
