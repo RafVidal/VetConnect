@@ -16,6 +16,7 @@ class CriaVacina extends Migration
         Schema::create('vacina', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 45);
+            $table->string('idade_animal', 45);
             $table->text('descricao');
             $table->boolean('obrigatoria');
             $table->unsignedBigInteger('especie_id');
