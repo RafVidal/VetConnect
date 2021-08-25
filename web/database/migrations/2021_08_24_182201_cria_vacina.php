@@ -18,7 +18,8 @@ class CriaVacina extends Migration
             $table->string('nome', 45);
             $table->text('descricao');
             $table->boolean('obrigatoria');
-
+            $table->unsignedBigInteger('especie_id');
+            $table->foreign('especie_id')->references('id')->on('especie');
         });
     }
 
