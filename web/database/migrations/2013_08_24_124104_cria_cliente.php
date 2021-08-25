@@ -18,6 +18,7 @@ class CriaCliente extends Migration
             $table->string('nome');
             $table->string('telefone', 15);
             $table->string('estado', 2);
+            $table->string('CEP', 10);
             $table->string('cidade', 45);
             $table->string('bairro', 45);
             $table->string('rua', 80);

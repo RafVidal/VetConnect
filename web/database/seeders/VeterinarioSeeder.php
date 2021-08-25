@@ -19,6 +19,7 @@ class VeterinarioSeeder extends Seeder
         //Cria o veterinário
         $veterinario                        = new Veterinario;
         $veterinario->nome                  = 'Veterinário de testes';
+        $veterinario->CEP                   = '12345-987';
         $veterinario->descricao             = 'Olá, eu sou um veterinário criado para testar a aplicação!!';
         $veterinario->atende_domiciliar     = true;
         $veterinario->telefone              = '(37) 988352002';

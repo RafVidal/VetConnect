@@ -20,6 +20,7 @@ class ClienteSeeder extends Seeder
         $cliente->nome                      = 'Cliente de testes';
         $cliente->telefone                  = '(37) 988122456';
         $cliente->estado                    = 'MG';
+        $cliente->CEP                   = '98765-123';
         $cliente->cidade                    = 'Lagoa da Prata';
         $cliente->bairro                    = 'Cidade Jardim';
         $cliente->rua                       = 'Alameda dos Bentivis';
