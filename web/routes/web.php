@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MobileClienteController;
+use App\Http\Controllers\Mobile\ClienteController;
+use App\Http\Controllers\Mobile\VeterinarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,12 @@ Route::prefix('cliente')->name('cliente.')->group(function () {
 
 });
 
+Route::prefix('veterinario')->name('veterinario.')->group(function () {
+    //Route::get('/dados', [VeterinarioController::class, 'dados'])->name('veterinarios.dados');
+	Route::post('/criar',               [VeterinarioController::class, 'store'])->name('criar');
+    Route::put('/{id}/atualizar',       [VeterinarioController::class, 'update'])->name('atualizar');
 
-Route::get('/csrf', function(){ return csrf_token(); })->name('csrf'); 
+});
+
+
+Route::get('/csrf', function(){ return csrf_token(); })->name('csrf');

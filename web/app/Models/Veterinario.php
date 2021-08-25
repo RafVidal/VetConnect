@@ -11,8 +11,7 @@ class Veterinario extends Model
 
     protected $table = 'veterinario';
 
-    public function _user(){
-        $this->belongsTo('App\Models\User',
-                            'id' /*chave local*/, 'veterinario_id'/*chave estrangeira na tabela destino*/);
+    public function users(){
+        return $this->hasOne(User::class, 'veterinario_id', 'id');
     }
 }

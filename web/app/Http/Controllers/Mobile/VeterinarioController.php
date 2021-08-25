@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Mobile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Cliente;
+use App\Models\Veterinario;
 use App\Models\User;
 use Exception;
 use DB;
 
-class ClienteController extends Controller
+class VeterinarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,6 +44,8 @@ class ClienteController extends Controller
             'nome'                      => 'required|max:150',
             'email'                     => 'required|email|max:80|unique:users,email',
             'password'                  => 'required|min:6|max:24',
+            'descricao'                 => 'required|max:350',
+            'atende_domiciliar'         => 'required|boolean',
             'telefone'                  => 'required|celular_com_ddd',
             'estado'                    => 'required|size:2|uf',
             'cidade'                    => 'required|max:45',
@@ -60,26 +62,28 @@ class ClienteController extends Controller
 
         try{
             DB::beginTransaction();
-            //Cria o cliente
-            $cliente                            = new Cliente;
-            $cliente->nome                      = $request->nome;
-            $cliente->telefone                  = $request->telefone;
-            $cliente->estado                    = $request->estado;
-            $cliente->CEP                       = $request->cep;
-            $cliente->cidade                    = $request->cidade;
-            $cliente->bairro                    = $request->bairro;
-            $cliente->rua                       = $request->rua;
-            $cliente->numero                    = $request->numero;
-            $cliente->complemento               = $request->complemento;
-            $cliente->save();
+            //Cria o veterinario
+            $veterinario                            = new Veterinario;
+            $veterinario->nome                      = $request->nome;
+            $veterinario->descricao                 = $request->descricao;
+            $veterinario->atende_domiciliar         = $request->atende_domiciliar;
+            $veterinario->telefone                  = $request->telefone;
+            $veterinario->estado                    = $request->estado;
+            $veterinario->CEP                       = $request->cep;
+            $veterinario->cidade                    = $request->cidade;
+            $veterinario->bairro                    = $request->bairro;
+            $veterinario->rua                       = $request->rua;
+            $veterinario->numero                    = $request->numero;
+            $veterinario->complemento               = $request->complemento;
+            $veterinario->save();
 
-            //Cria o usuário para o cliente
+            //Cria o usuário para o veterinario
             $user                               = new User;
             $user->email                        = $request->email;
             $user->password                     = bcrypt($request->password);
-            $user->cliente_id                   = $cliente->id;
-            $user->veterinario                  = false;
-            $user->cliente                      = true;
+            $user->veterinario_id               = $veterinario->id;
+            $user->veterinario                  = true;
+            $user->veterinario                      = false;
             $user->save();
 
             DB::commit();
@@ -136,6 +140,8 @@ class ClienteController extends Controller
             'nome'                      => 'required|max:150',
             'email'                     => 'required|email|max:80',
             'password'                  => 'required|min:6|max:24',
+            'descricao'                 => 'required|max:350',
+            'atende_domiciliar'         => 'required|boolean',
             'telefone'                  => 'required|celular_com_ddd',
             'estado'                    => 'required|size:2|uf',
             'cidade'                    => 'required|max:45',
@@ -153,21 +159,23 @@ class ClienteController extends Controller
         try{
             DB::beginTransaction();
 
-            //Atualiza o cliente
-            $cliente                            = Cliente::findOrFail($id);
-            $cliente->nome                      = $request->nome;
-            $cliente->telefone                  = $request->telefone;
-            $cliente->estado                    = $request->estado;
-            $cliente->CEP                       = $request->cep;
-            $cliente->cidade                    = $request->cidade;
-            $cliente->bairro                    = $request->bairro;
-            $cliente->rua                       = $request->rua;
-            $cliente->numero                    = $request->numero;
-            $cliente->complemento               = $request->complemento;
-            $cliente->save();
+            //Atualiza o veterinario
+            $veterinario                            = veterinario::findOrFail($id);
+            $veterinario->nome                      = $request->nome;
+            $veterinario->telefone                  = $request->telefone;
+            $veterinario->descricao                 = $request->descricao;
+            $veterinario->atende_domiciliar         = $request->atende_domiciliar;
+            $veterinario->estado                    = $request->estado;
+            $veterinario->CEP                       = $request->cep;
+            $veterinario->cidade                    = $request->cidade;
+            $veterinario->bairro                    = $request->bairro;
+            $veterinario->rua                       = $request->rua;
+            $veterinario->numero                    = $request->numero;
+            $veterinario->complemento               = $request->complemento;
+            $veterinario->save();
 
-            //Atualiza o usuário do cliente
-            $user                               = $cliente->users;
+            //Atualiza o usuário do veterinario
+            $user                               = $veterinario->users;
             if($user->email != $request->email){
                 $valida = User::where('email', $request->email)->get();
                 if(count($valida) > 0){
@@ -194,7 +202,7 @@ class ClienteController extends Controller
         ]);
     }
 
-    /**
+     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
