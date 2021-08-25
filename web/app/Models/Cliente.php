@@ -13,9 +13,8 @@ class Cliente extends Model
 
     public $timestamps = false;
 
-    public function _user(){
-        $this->belongsTo('App\Models\User',
-                            'id' /*chave local*/, 'cliente_id'/*chave estrangeira na tabela destino*/);
+    public function users(){
+        return $this->hasOne(User::class, 'cliente_id', 'id');
     }
 }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\App\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//=========================================================================
+//==========================CLIENTES=======================================
+//=========================================================================
+Route::prefix('cliente')->name('cliente.')->group(function () {
+    //Route::get('/dados', [ClienteController::class, 'dados'])->name('clientes.dados');
+	Route::post('/criar',               [ClienteController::class, 'store'])->name('criar');
+    Route::put('/{id}/atualizar',    [ClienteController::class, 'update'])->name('atualizar');
+
+});
+
+
+Route::get('/csrf', function(){ return csrf_token(); })->name('csrf'); 
