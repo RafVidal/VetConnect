@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mobile\ClienteController;
 use App\Http\Controllers\Mobile\VeterinarioController;
+use App\Http\Controllers\Mobile\AnimalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,13 @@ Route::prefix('veterinario')->name('veterinario.')->group(function () {
     //Route::get('/dados', [VeterinarioController::class, 'dados'])->name('veterinarios.dados');
 	Route::post('/criar',               [VeterinarioController::class, 'store'])->name('criar');
     Route::put('/{id}/atualizar',       [VeterinarioController::class, 'update'])->name('atualizar');
+
+});
+
+Route::prefix('animal')->name('animal.')->group(function () {
+    //Route::get('/dados', [AnimalController::class, 'dados'])->name('animais.dados');
+	Route::post('/criar',               [AnimalController::class, 'store'])->name('criar');
+    Route::put('/{id}/atualizar',       [AnimalController::class, 'update'])->name('atualizar');
 
 });
 
