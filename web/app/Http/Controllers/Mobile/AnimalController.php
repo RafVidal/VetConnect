@@ -31,7 +31,7 @@ class AnimalController extends Controller
                 'message'   => 'Ocorreu um erro durante a pesquisa de animais!'
             ]);
         }
-        
+
     }
 
     /**
@@ -62,7 +62,7 @@ class AnimalController extends Controller
             'cliente_id'                => 'required|exists:cliente,id',
         ]);
         if($validator->fails()){
-            return response()->json([$validator->messages()->get('*'), 
+            return response()->json([$validator->messages()->get('*'),
                                     'status'      => false,], 200);
         }
 
@@ -114,7 +114,7 @@ class AnimalController extends Controller
                 'message'   => 'Ocorreu um erro ao encontrar o animal!'
             ]);
         }
-        
+
     }
     public function edit($id)
     {
@@ -133,7 +133,7 @@ class AnimalController extends Controller
             'cliente_id'                => 'required|exists:cliente,id',
         ]);
         if($validator->fails()){
-            return response()->json([$validator->messages()->get('*'), 
+            return response()->json([$validator->messages()->get('*'),
                                     'status'      => false,], 200);
         }
 
@@ -173,7 +173,7 @@ class AnimalController extends Controller
     {
         try{
             $medicacao = Medicacao::where('animal_id', $id)->get();
-            if($medicacao){
+            if(count($medicacao)>0){
                 throw new Exception('Impossível realizar a exclusão. O animal em questão está em processo de medicação.');
             }
 
