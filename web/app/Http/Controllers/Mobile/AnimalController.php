@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Animal;
 use App\Models\Medicacao;
 use App\Models\CartaoDeVacinacao;
+use App\Models\Especie;
 use Exception;
 use DB;
 
@@ -182,13 +183,13 @@ class AnimalController extends Controller
                 foreach($cvs as $cv){
                     $cv->delete();
                 }
-                
+
                 $animal = Animal::findOrFail($id);
                 $animal->delete();
+            DB::commit();
                 return response()->json(['status'      => true,
                                         'message'   => 'Animal deletado com sucesso!',
                                         'teste' => $animal], 200);
-            DB::commit();
         } catch (Exception $e){
             DB::rollback();
             return response()->json([
@@ -197,5 +198,43 @@ class AnimalController extends Controller
                 'message'   => 'Ocorreu um erro na deleção do animal!'
             ]);
         }
+    }
+
+    public function medicacao($id){
+        try{
+            //$cliente = auth()->user()->_cliente->id
+            $medicacao = Medicacao::where('animal_id', $id)->get();//where('cliente_id', $cliente)->get();
+            if(count ($medicacao)>0){
+                return response()->json(['dados' => $medicacao, 'status' => true]);
+            }else{
+                return response()->json(['message'=> 'Nenhuma medicação cadastrada', 'status' => false]);
+            }
+        } catch (Exception $e){
+            return response()->json([
+                'status'      => false,
+                'response'  => $e->getMessage(),
+                'message'   => 'Ocorreu um erro durante a pesquisa de medicação dos animais!'
+            ]);
+        }
+
+    }
+
+    public function especie(){
+        try{
+            //$cliente = auth()->user()->_cliente->id
+            $especie = Especie::all();//where('cliente_id', $cliente)->get();
+            if(count ($especie)>0){
+                return response()->json(['dados' => $especie, 'status' => true]);
+            }else{
+                return response()->json(['message'=> 'Espécie não cadastrada', 'status' => false]);
+            }
+        } catch (Exception $e){
+            return response()->json([
+                'status'      => false,
+                'response'  => $e->getMessage(),
+                'message'   => 'Ocorreu um erro durante a pesquisa de espécies!'
+            ]);
+        }
+
     }
 }

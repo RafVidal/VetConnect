@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Mobile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Avaliacao;
+use Illuminate\Support\Facades\Validator;
+use Exception;
+use DB;
 
 class AvaliacaoController extends Controller
 {
@@ -19,7 +22,7 @@ class AvaliacaoController extends Controller
                                         ->leftJoin('cliente as cliente', 'avaliacao.cliente_id', 'cliente.id')
                                         ->orderBy('created_at', 'desc')
                                         ->get();
-            if(count(avaliacoes) > 0){
+            if(count($avaliacoes) > 0){
                 return response()->json(['dados' => $avaliacoes, 'status' => true]);
             }else{
                 return response()->json(['message'=> 'Nenhuma avaliacao cadastrada', 'status' => false]);
@@ -31,7 +34,7 @@ class AvaliacaoController extends Controller
                 'message'   => 'Ocorreu um erro durante a consulta de avaliacoes'
             ]);
         }
-        
+
 
 
     }
@@ -105,10 +108,13 @@ class AvaliacaoController extends Controller
     {
         try{
             DB::beginTransaction();
-                $avaliacao = Avaliacao::findOrFail($id)->delete();
-                return response()->json(['status'      => true,
-                                        'message'   => 'Avaliacao deletado com sucesso!'], 200);
+                $avaliacao = Avaliacao::findOrFail($id);
+                $avaliacao->delete();
             DB::commit();
+                return response()->json(['status'      => true,
+                                        'message'   => 'Avaliacao deletada com sucesso!',
+                                        'teste' => $avaliacao], 200);
+
         } catch (Exception $e){
             DB::rollback();
             return response()->json([
@@ -124,6 +130,7 @@ class AvaliacaoController extends Controller
         return response()->json([
             'media' => ($avaliacoes->sum('avaliacao') / count($avaliacoes)),
             'quantidade' => count($avaliacoes),
+            'status' => true,
         ], 200);
     }
 }
