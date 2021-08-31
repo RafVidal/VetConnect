@@ -6,19 +6,32 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Animal;
+use App\Models\Medicacao;
+use App\Models\CartaoDeVacinacao;
 use Exception;
 use DB;
 
 class AnimalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        try{
+            //$cliente = auth()->user()->_cliente->id
+            $animal = Animal::all();//where('cliente_id', $cliente)->get();
+            if($animal){
+                return response()->json(['dados' => $animal, 'status' => true]);
+            }else{
+                return response()->json(['message'=> 'Nenhum animal cadastrado', 'status' => true]);
+            }
+        } catch (Exception $e){
+            return response()->json([
+                'status'      => false,
+                'response'  => $e->getMessage(),
+                'message'   => 'Ocorreu um erro durante a pesquisa de animais!'
+            ]);
+        }
+        
     }
 
     /**
@@ -49,7 +62,8 @@ class AnimalController extends Controller
             'cliente_id'                => 'required|exists:cliente,id',
         ]);
         if($validator->fails()){
-            return response()->json($validator->messages()->get('*'), 200);
+            return response()->json([$validator->messages()->get('*'), 
+                                    'status'      => false,], 200);
         }
 
         try{
@@ -84,35 +98,29 @@ class AnimalController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        try{
+            $animal = Animal::findOrFail($id);//where('cliente_id', $cliente)->get();
+            if($animal){
+                return response()->json(['dados'=>$animal, 'status' => true]);
+            }else{
+                return response()->json(['message'=> 'Animal não encontrado', 'status' => true]);
+            }
+        } catch (Exception $e){
+            return response()->json([
+                'status'      => false,
+                'response'  => $e->getMessage(),
+                'message'   => 'Ocorreu um erro ao encontrar o animal!'
+            ]);
+        }
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
@@ -125,7 +133,8 @@ class AnimalController extends Controller
             'cliente_id'                => 'required|exists:cliente,id',
         ]);
         if($validator->fails()){
-            return response()->json($validator->messages()->get('*'), 200);
+            return response()->json([$validator->messages()->get('*'), 
+                                    'status'      => false,], 200);
         }
 
         try{
@@ -160,14 +169,27 @@ class AnimalController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        try{
+            $medicacao = Medicacao::where('animal_id', $id)->get();
+            if($medicacao){
+                throw new Exception('Impossível realizar a exclusão. O animal em questão está em processo de medicação.');
+            }
+
+            DB::beginTransaction();
+                CartaoDeVacinacao::where('animal_id', $id)->delete();
+                Animal::findOrFail($id)->delete();
+                return response()->json(['status'      => true,
+                                        'message'   => 'Animal deletado com sucesso!'], 200);
+            DB::commit();
+        } catch (Exception $e){
+            DB::rollback();
+            return response()->json([
+                'status'      => false,
+                'response'  => $e->getMessage(),
+                'message'   => 'Ocorreu um erro na deleção do animal!'
+            ]);
+        }
     }
 }

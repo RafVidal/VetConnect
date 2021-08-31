@@ -20,29 +20,43 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//=========================================================================
-//==========================CLIENTES=======================================
-//=========================================================================
-Route::prefix('cliente')->name('cliente.')->group(function () {
-    //Route::get('/dados', [ClienteController::class, 'dados'])->name('clientes.dados');
-	Route::post('/criar',               [ClienteController::class, 'store'])->name('criar');
-    Route::put('/{id}/atualizar',    [ClienteController::class, 'update'])->name('atualizar');
 
+//Rotas mobile
+Route::prefix('app')->name('app.')->group(function (){
+    //=========================================================================
+    //==========================CLIENTES=======================================
+    //=========================================================================
+    Route::prefix('/cliente')->name('cliente.')->group(function () {
+        //Route::get('/dados', [ClienteController::class, 'dados'])->name('clientes.dados');
+        Route::post('/criar',                   [ClienteController::class, 'store'])->name('criar');
+        Route::put('/{id}/atualizar',           [ClienteController::class, 'update'])->name('atualizar');
+        Route::get('/{id}',                     [ClienteController::class, 'show'])->name('show');
+    });
+
+    //=========================================================================
+    //=========================VETERINARIO=====================================
+    //=========================================================================
+    Route::prefix('/veterinario')->name('veterinario.')->group(function () {
+        //Route::get('/dados', [VeterinarioController::class, 'dados'])->name('veterinarios.dados');
+        //Route::post('/criar',                   [VeterinarioController::class, 'store'])->name('criar');
+        //Route::put('/{id}/atualizar',           [VeterinarioController::class, 'update'])->name('atualizar');
+        Route::get('/index',                    [VeterinarioController::class, 'index'])->name('index');
+
+    });
+
+    //=========================================================================
+    //============================ANIMAL=======================================
+    //=========================================================================
+    Route::prefix('/animal')->name('animal.')->group(function () {
+        //Route::get('/dados', [AnimalController::class, 'dados'])->name('animais.dados');
+        Route::post('/criar',                   [AnimalController::class, 'store'])->name('criar');
+        Route::put('/{id}/atualizar',           [AnimalController::class, 'update'])->name('atualizar');
+        Route::get('/index',                    [AnimalController::class, 'index'])->name('index');
+        Route::get('/{id}',                     [AnimalController::class, 'show'])->name('show');
+        Route::delete('/{id}/destroy',          [AnimalController::class, 'destroy'])->name('destroy');
+
+    });
+
+
+    //Route::get('/csrf', function(){ return csrf_token(); })->name('csrf');
 });
-
-Route::prefix('veterinario')->name('veterinario.')->group(function () {
-    //Route::get('/dados', [VeterinarioController::class, 'dados'])->name('veterinarios.dados');
-	Route::post('/criar',               [VeterinarioController::class, 'store'])->name('criar');
-    Route::put('/{id}/atualizar',       [VeterinarioController::class, 'update'])->name('atualizar');
-
-});
-
-Route::prefix('animal')->name('animal.')->group(function () {
-    //Route::get('/dados', [AnimalController::class, 'dados'])->name('animais.dados');
-	Route::post('/criar',               [AnimalController::class, 'store'])->name('criar');
-    Route::put('/{id}/atualizar',       [AnimalController::class, 'update'])->name('atualizar');
-
-});
-
-
-Route::get('/csrf', function(){ return csrf_token(); })->name('csrf');
