@@ -14,6 +14,7 @@ class CriaAvaliacao extends Migration
     public function up()
     {
         Schema::create('avaliacao', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('cliente');
             $table->unsignedBigInteger('veterinario_id');

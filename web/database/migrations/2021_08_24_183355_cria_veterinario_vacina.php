@@ -14,6 +14,7 @@ class CriaVeterinarioVacina extends Migration
     public function up()
     {
         Schema::create('veterinario_vacina', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('veterinario_id');
             $table->foreign('veterinario_id')->references('id')->on('veterinario');
             $table->unsignedBigInteger('vacina_id');
