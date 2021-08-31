@@ -178,10 +178,16 @@ class AnimalController extends Controller
             }
 
             DB::beginTransaction();
-                CartaoDeVacinacao::where('animal_id', $id)->delete();
-                Animal::findOrFail($id)->delete();
+                $cvs = CartaoDeVacinacao::where('animal_id', $id)->get();
+                foreach($cvs as $cv){
+                    $cv->delete();
+                }
+                
+                $animal = Animal::findOrFail($id);
+                $animal->delete();
                 return response()->json(['status'      => true,
-                                        'message'   => 'Animal deletado com sucesso!'], 200);
+                                        'message'   => 'Animal deletado com sucesso!',
+                                        'teste' => $animal], 200);
             DB::commit();
         } catch (Exception $e){
             DB::rollback();
