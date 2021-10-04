@@ -188,13 +188,7 @@ class AnimalController extends Controller
                 $animal->delete();
             DB::commit();
                 return response()->json(['status'      => true,
-<<<<<<< HEAD
-                                        'message'   => 'Animal deletado com sucesso!',
-                                        'teste' => $animal], 200);
-=======
                                         'message'   => 'Animal deletado com sucesso!'], 200);
-            DB::commit();
->>>>>>> dc6f31f8ba9ce5a31d963d240073317cd19e17cd
         } catch (Exception $e){
             DB::rollback();
             return response()->json([
@@ -206,7 +200,6 @@ class AnimalController extends Controller
     }
 
     public function medicacao($id){
-<<<<<<< HEAD
         try{
             //$cliente = auth()->user()->_cliente->id
             $medicacao = Medicacao::where('animal_id', $id)->get();//where('cliente_id', $cliente)->get();
@@ -242,17 +235,6 @@ class AnimalController extends Controller
             ]);
         }
 
-=======
-        $medicacao = Medicacao::where('animal_id', $id)->get();
-        if($medicacao){
-            return response()->json(['status'      => true,
-                                        'message'   => 'Medicações do animal',
-                                        'response' => $medicacao], 200);
-        }else{
-            return response()->json(['status'      => true,
-                                        'message'   => 'Nenhuma medicação cadastrada para este animal.',
-                                        'response' => null], 200);
-        }
     }
 
     public function cartao_vacinacao($id){
@@ -266,6 +248,5 @@ class AnimalController extends Controller
                                         'message'   => 'Nenhuma vacina cadastrada no cartão.',
                                         'response' => null], 200);
         }
->>>>>>> dc6f31f8ba9ce5a31d963d240073317cd19e17cd
     }
 }
