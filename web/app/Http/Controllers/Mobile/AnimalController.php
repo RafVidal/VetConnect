@@ -186,8 +186,7 @@ class AnimalController extends Controller
                 $animal = Animal::findOrFail($id);
                 $animal->delete();
                 return response()->json(['status'      => true,
-                                        'message'   => 'Animal deletado com sucesso!',
-                                        'teste' => $animal], 200);
+                                        'message'   => 'Animal deletado com sucesso!'], 200);
             DB::commit();
         } catch (Exception $e){
             DB::rollback();
@@ -196,6 +195,32 @@ class AnimalController extends Controller
                 'response'  => $e->getMessage(),
                 'message'   => 'Ocorreu um erro na deleção do animal!'
             ]);
+        }
+    }
+
+    public function medicacao($id){
+        $medicacao = Medicacao::where('animal_id', $id)->get();
+        if($medicacao){
+            return response()->json(['status'      => true,
+                                        'message'   => 'Medicações do animal',
+                                        'response' => $medicacao], 200);
+        }else{
+            return response()->json(['status'      => true,
+                                        'message'   => 'Nenhuma medicação cadastrada para este animal.',
+                                        'response' => null], 200);
+        }
+    }
+
+    public function cartao_vacinacao($id){
+        $cv = CartaoDeVacinacao::where('animal_id', $id)->get();
+        if($cv){
+            return response()->json(['status'      => true,
+                                        'message'   => 'Cartão de vacinação do animal',
+                                        'response' => $cv], 200);
+        }else{
+            return response()->json(['status'      => true,
+                                        'message'   => 'Nenhuma vacina cadastrada no cartão.',
+                                        'response' => null], 200);
         }
     }
 }
