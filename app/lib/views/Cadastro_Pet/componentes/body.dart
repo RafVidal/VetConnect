@@ -10,7 +10,7 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "TELA DE CADASTRO DO PET",
+            "CADASTRO DO PET",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: size.height * 0.03),
@@ -114,7 +114,7 @@ class Body extends StatelessWidget {
                 color: Colors.indigo[800],
                 onPressed: () {},
                 child: Text(
-                  "PRÓXIMA ETAPA",
+                  "FINALIZAR",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
