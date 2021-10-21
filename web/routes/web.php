@@ -5,6 +5,7 @@ use App\Http\Controllers\Mobile\ClienteController;
 use App\Http\Controllers\Mobile\VeterinarioController;
 use App\Http\Controllers\Mobile\AnimalController;
 use App\Http\Controllers\Mobile\AvaliacaoController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('api')->name('auth.')->group(function(){
+    Route::post('me', [AuthController::class, 'me'])->name('me');
+    Route::post('login', [AuthController::class, 'login'])->name('logar');
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('refresh', [AuthController::class, 'refresh'])->name('refresh');
+});
 
 //Rotas mobile
 Route::prefix('app')->name('app.')->group(function (){
