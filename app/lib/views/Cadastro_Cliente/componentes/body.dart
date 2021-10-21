@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetconnect/views/Cadastro_Cliente/componentes/background.dart';
-import 'package:vetconnect/views/Cadastro_Localizacao/tela_cadastro_localizacao.dart';
-import 'package:vetconnect/views/Cadastro_Pet/tela_cadastro_pet.dart';
+import 'package:vetconnect/views/Cadastro_Localizacao_USER/tela_cadastro_localizacao_USER.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -104,7 +103,7 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return TelaCadastroLocalizacao();
+                        return TelaCadastroLocalizacaoUSER();
                       },
                     ),
                   );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vetconnect/views/Cadastro_cliente/tela_cadastro_cliente.dart';
 import 'package:vetconnect/views/Login/componentes/background.dart';
+import 'package:vetconnect/views/Menu/menu.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -66,7 +67,16 @@ class Body extends StatelessWidget {
               child: FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                 color: Colors.indigo[800],
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Menu();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   "LOGIN",
                   style: TextStyle(color: Colors.white),

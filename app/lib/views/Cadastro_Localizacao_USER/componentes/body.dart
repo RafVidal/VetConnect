@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vetconnect/views/Cadastro_Localizacao_VET/tela_cadastro_localizacao_VET.dart';
-import 'package:vetconnect/views/Cadastro_Vet/componentes/background.dart';
+import 'package:vetconnect/views/Cadastro_Localizacao_USER/componentes/bakground.dart';
+import 'package:vetconnect/views/Cadastro_Pet/tela_cadastro_pet.dart';
+import 'package:vetconnect/views/Menu/menu.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -11,14 +12,14 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "CADASTRO CLÍNICA/VETERINÁRIO",
+            "LOCALIZAÇÃO DO USUÁRIO",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: size.height * 0.03),
           Container(
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Email",
+                hintText: "Estado",
                 border: InputBorder.none,
               ),
             ),
@@ -33,7 +34,7 @@ class Body extends StatelessWidget {
           Container(
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Nome",
+                hintText: "CEP",
                 border: InputBorder.none,
               ),
             ),
@@ -48,7 +49,7 @@ class Body extends StatelessWidget {
           Container(
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Descrição",
+                hintText: "Cidade",
                 border: InputBorder.none,
               ),
             ),
@@ -63,7 +64,7 @@ class Body extends StatelessWidget {
           Container(
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Atende a Domicílio",
+                hintText: "Bairro",
                 border: InputBorder.none,
               ),
             ),
@@ -78,37 +79,7 @@ class Body extends StatelessWidget {
           Container(
             child: TextField(
               decoration: InputDecoration(
-                hintText: "Telefone",
-                border: InputBorder.none,
-              ),
-            ),
-            margin: EdgeInsets.symmetric(vertical: 10),
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            width: size.width * 0.9,
-            decoration: BoxDecoration(
-              color: Colors.blue[50],
-              borderRadius: BorderRadius.circular(29),
-            ),
-          ),
-          Container(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Senha",
-                border: InputBorder.none,
-              ),
-            ),
-            margin: EdgeInsets.symmetric(vertical: 10),
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            width: size.width * 0.9,
-            decoration: BoxDecoration(
-              color: Colors.blue[50],
-              borderRadius: BorderRadius.circular(29),
-            ),
-          ),
-          Container(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Confirmar Senha",
+                hintText: "Rua",
                 border: InputBorder.none,
               ),
             ),
@@ -133,13 +104,13 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return TelaCadastroLocalizacaoVET();
+                        return Menu();
                       },
                     ),
                   );
                 },
                 child: Text(
-                  "PRÓXIMA ETAPA",
+                  "FINALIZAR CADASTRO",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

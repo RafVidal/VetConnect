@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vetconnect/views/Cadastro_Pet/componentes/background.dart';
+import 'package:vetconnect/views/Menu/menu.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -112,9 +113,18 @@ class Body extends StatelessWidget {
               child: FlatButton(
                 padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
                 color: Colors.indigo[800],
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Menu();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
-                  "FINALIZAR",
+                  "CADASTRAR",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

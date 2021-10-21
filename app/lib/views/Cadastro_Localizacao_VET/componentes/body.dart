@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vetconnect/views/Cadastro_Localizacao/componentes/bakground.dart';
-import 'package:vetconnect/views/Cadastro_Pet/tela_cadastro_pet.dart';
+import 'package:vetconnect/views/Cadastro_Localizacao_VET/componentes/bakground.dart';
+import 'package:vetconnect/views/Menu/menu.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            "LOCALIZAÇÃO",
+            "LOCALIZAÇÃO DA CLÍNICA/VETERINÁRIO",
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: size.height * 0.03),
@@ -103,13 +103,13 @@ class Body extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return TelaCadastroPet();
+                        return Menu();
                       },
                     ),
                   );
                 },
                 child: Text(
-                  "PRÓXIMA ETAPA",
+                  "FINALIZAR",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
