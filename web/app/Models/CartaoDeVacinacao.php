@@ -9,7 +9,17 @@ class CartaoDeVacinacao extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'descricao',
+        'data',
+    /*  'animal_id',
+        'veterinario_id',
+    */
+    ];
+
     protected $table = 'cartao_de_vacinacao';
+    protected $dates = ['data'];
+    public $timestamps = false;
 
     public function _vacina(){
         $this->hasOne('App\Models\Vacina',

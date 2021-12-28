@@ -10,9 +10,22 @@ class Animal extends Model
 {
     use HasFactory;
 
-    use SoftDeletes;
+    protected $fillable = [
+        'img_pet',
+        'nome',
+        'especie',
+        'raca',
+        'sexo',
+        'cor',
+        'nascimento',
+    /*  'cliente_id',
+        'especie_id',
+    */
+    ];
 
     protected $table = 'animal';
+    protected $dates = ['nascimento'];
+    public $timestamps = false;
 
     public function _cliente(){
         $this->hasOne('App/Models/Cliente',

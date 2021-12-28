@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaMedicacao extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('medicacao', function (Blueprint $table) {
@@ -20,19 +16,15 @@ class CriaMedicacao extends Migration
             $table->string('dosagem', 50);
             $table->integer('intervalo');
             $table->datetime('data_fim');
-            $table->unsignedBigInteger('animal_id');
+            /*$table->unsignedBigInteger('animal_id');
             $table->foreign('animal_id')->references('id')->on('animal');
             $table->unsignedBigInteger('veterinario_id');
-            $table->foreign('veterinario_id')->references('id')->on('veterinario');
-
+            $table->foreign('veterinario_id')->references('id')->on('users');
+            */
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();

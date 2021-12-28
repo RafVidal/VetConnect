@@ -2,27 +2,49 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mobile\ClienteController;
-use App\Http\Controllers\Mobile\VeterinarioController;
+// use App\Http\Controllers\Mobile\VeterinarioController;
 use App\Http\Controllers\Mobile\AnimalController;
 use App\Http\Controllers\Mobile\AvaliacaoController;
+use App\Http\Controllers\MedicacaoController;
+use App\Http\Controllers\CartaoDeVacinacaoController;
+use App\Http\Controllers\VacinaController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VeterinarioController;
+use App\Http\Controllers\PetsController;
+
+    //=========================================================================
+    //============================USERS========================================
+    //=========================================================================
 
 Route::get('/', function () {
+    return view('welcome_users');
+});
+
+Route::resource('animal', PetsController::class);
+
+    //=========================================================================
+    //============================ADMS=========================================
+    //=========================================================================
+
+Auth::routes();
+
+Route::get('/adm', function () {
     return view('welcome');
 });
 
-Route::get('/api/login', function () {
-    return view('login');
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/cadastro', function () {
-    return view('cadastro');
-});
+Route::resource('cartao_de_vacinacao', CartaoDeVacinacaoController::class);
 
-Route::get('/localizacao', function () {
-    return view('localizacao');
-});
+Route::resource('medicacao', MedicacaoController::class);
 
+Route::resource('vacina', VacinaController::class);
+
+Route::resource('veterinario', VeterinarioController::class);
+
+    //=========================================================================
+    //=============================API=========================================
+    //=========================================================================
 Route::middleware('api')->name('auth.')->group(function(){
     Route::post('me', [AuthController::class, 'me'])->name('me');
     Route::post('login', [AuthController::class, 'login'])->name('logar');
@@ -84,3 +106,5 @@ Route::prefix('app')->name('app.')->group(function (){
 
     //Route::get('/csrf', function(){ return csrf_token(); })->name('csrf');
 });
+
+

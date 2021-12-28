@@ -9,6 +9,16 @@ class Vacina extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nome',
+        'idade_animal',
+        'descricao',
+        'obrigatoria',
+    /*
+        'especie_id',
+    */
+    ];
+
     protected $table = 'vacina';
 
     public $timestamps = false;

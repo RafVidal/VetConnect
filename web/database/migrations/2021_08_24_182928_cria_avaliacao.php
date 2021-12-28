@@ -18,7 +18,7 @@ class CriaAvaliacao extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('cliente');
             $table->unsignedBigInteger('veterinario_id');
-            $table->foreign('veterinario_id')->references('id')->on('veterinario');
+            $table->foreign('veterinario_id')->references('id')->on('users');
             $table->boolean('avaliacao');
             $table->string('descricao',200);
             $table->timestamps();

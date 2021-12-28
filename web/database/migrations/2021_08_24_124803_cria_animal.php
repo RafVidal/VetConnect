@@ -6,24 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaAnimal extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('animal', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('img_pet')->nullable();
             $table->string('nome', 45);
-            $table->unsignedBigInteger('especie_id');
+            $table->string('especie', 45);
+            /*$table->unsignedBigInteger('especie_id');
             $table->foreign('especie_id')->references('id')->on('especie');
+            */
             $table->string('raca')->nullable();
-            $table->tinyInteger('sexo');
+            $table->string('sexo');
             $table->string('cor', 45);
             $table->date('nascimento');
-            $table->unsignedBigInteger('cliente_id');
+            /*$table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('cliente');
+            */
             $table->timestamps();
             $table->softDeletes();
 ;

@@ -9,6 +9,17 @@ class Medicacao extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'medicamento',
+        'descricao',
+        'dosagem',
+        'intervalo',
+        'data_fim',
+    /*  'animal_id',
+        'veterinario_id',
+    */
+    ];
+
     protected $table = 'medicacao';
     protected $dates = ['data_fim'];
     public $timestamps = false;

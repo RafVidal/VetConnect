@@ -6,18 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaVeterinario extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('veterinario', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome', 45);
             $table->text('descricao');
-            $table->boolean('atende_domiciliar');
+            $table->string('atende_domiciliar');
             $table->string('telefone', 15);
             $table->string('estado', 2);
             $table->string('CEP', 10);
@@ -31,11 +27,6 @@ class CriaVeterinario extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();

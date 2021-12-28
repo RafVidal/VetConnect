@@ -7,8 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Veterinario extends Model
 {
-    //use HasFactory;
+    use HasFactory;
 
+    protected $fillable = [
+        'nome',
+        'descricao',
+        'atende_domiciliar',
+        'telefone',
+        'estado',
+        'CEP',
+        'cidade',
+        'bairro',
+        'rua',
+        'numero',
+        'complemento',
+    ];
     protected $table = 'veterinario';
 
     public function users(){

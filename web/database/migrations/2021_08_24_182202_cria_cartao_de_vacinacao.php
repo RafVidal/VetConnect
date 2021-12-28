@@ -6,31 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaCartaoDeVacinacao extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('cartao_de_vacinacao', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->datetime('data');
             $table->text('descricao');
-            $table->unsignedBigInteger('vacina_id');
+            /*$table->unsignedBigInteger('vacina_id');
             $table->foreign('vacina_id')->references('id')->on('vacina');
             $table->unsignedBigInteger('animal_id');
             $table->foreign('animal_id')->references('id')->on('animal');
+            */
             $table->timestamps();
 
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();

@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaVacina extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('vacina', function (Blueprint $table) {
@@ -18,17 +14,14 @@ class CriaVacina extends Migration
             $table->string('nome', 45);
             $table->string('idade_animal', 45);
             $table->text('descricao');
-            $table->boolean('obrigatoria');
-            $table->unsignedBigInteger('especie_id');
+            $table->string('obrigatoria');
+            /*$table->unsignedBigInteger('especie_id');
             $table->foreign('especie_id')->references('id')->on('especie');
+            */
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();

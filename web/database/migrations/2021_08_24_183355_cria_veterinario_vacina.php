@@ -16,19 +16,14 @@ class CriaVeterinarioVacina extends Migration
         Schema::create('veterinario_vacina', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('veterinario_id');
-            $table->foreign('veterinario_id')->references('id')->on('veterinario');
+            $table->foreign('veterinario_id')->references('id')->on('users');
             $table->unsignedBigInteger('vacina_id');
             $table->foreign('vacina_id')->references('id')->on('vacina');
             $table->boolean('em_estoque');
-           
+
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();
