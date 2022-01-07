@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaCliente extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('cliente', function (Blueprint $table) {
@@ -26,12 +21,6 @@ class CriaCliente extends Migration
             $table->string('complemento', 45)->nullable();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();

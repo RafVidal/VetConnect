@@ -21,7 +21,6 @@ class Medicacao extends Model
     ];
 
     protected $table = 'medicacao';
-    protected $dates = ['data_fim'];
     public $timestamps = false;
 
     public function _animal(){

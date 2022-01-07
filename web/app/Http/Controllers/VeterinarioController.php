@@ -22,7 +22,22 @@ class VeterinarioController extends Controller
     public function store(Request $request)
     {
 
+        if($request->hasFile('img_vet')){
+            $filenameWithExt= $request->file('img_vet')->getClientOriginalName();
+
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+
+            $extension = $request->file('img_vet')->getClientOriginalName();
+
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+
+            $path = $request->file('img_vet')->storeAs('public/img_vet', $fileNameToStore);
+        } else{
+            $fileNameToStore = 'noimage.png';
+        }
+
         $request->validate([
+            'img_vet'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'nome' => 'required',
             'descricao' => 'required',
             'atende_domiciliar' => 'required',
@@ -38,6 +53,7 @@ class VeterinarioController extends Controller
         ]);
 
         $itens= Veterinario::create([
+            'img_vet'=>$fileNameToStore,
             'nome'=>$request->nome,
             'descricao'=>mb_strtolower($request->descricao),
             'atende_domiciliar'=>$request->atende_domiciliar,
@@ -91,10 +107,11 @@ class VeterinarioController extends Controller
 
     public function destroy(Veterinario $veterinario)
     {
+        unlink('storage/img_vet/'.$veterinario->img_vet);
 
-       $veterinario->delete();
+        $veterinario->delete();
 
-       return redirect()->route('veterinario.index')
-                        ->with('successo','A exclusão foi um sucesso!');
+        return redirect()->route('veterinario.index')
+                        ->with('success','A exclusão foi um sucesso!');
     }
 }

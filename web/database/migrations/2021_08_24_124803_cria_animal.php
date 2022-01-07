@@ -20,7 +20,7 @@ class CriaAnimal extends Migration
             $table->string('raca')->nullable();
             $table->string('sexo');
             $table->string('cor', 45);
-            $table->date('nascimento');
+            $table->string('nascimento');
             /*$table->unsignedBigInteger('cliente_id');
             $table->foreign('cliente_id')->references('id')->on('cliente');
             */
@@ -30,11 +30,6 @@ class CriaAnimal extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::disableForeignKeyConstraints();

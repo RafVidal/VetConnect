@@ -83,6 +83,6 @@ class VacinaController extends Controller
        $vacina->delete();
 
        return redirect()->route('vacina.index')
-                        ->with('successo','A exclusão foi um sucesso!');
+                        ->with('success','A exclusão foi um sucesso!');
     }
 }

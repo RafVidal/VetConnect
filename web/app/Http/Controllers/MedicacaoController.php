@@ -86,6 +86,6 @@ class MedicacaoController extends Controller
        $medicacao->delete();
 
        return redirect()->route('medicacao.index')
-                        ->with('successo','A exclusão foi um sucesso!');
+                        ->with('success','A exclusão foi um sucesso!');
     }
 }

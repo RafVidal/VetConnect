@@ -85,23 +85,6 @@
                     <span>Meus Pet's</span></a>
             </li>
 
-
-            <!-- Item navergador - Menu Lateral -->
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-user-plus"></i>
-                    <span>Medicações</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cadastros Principais:</h6>
-                        <a class="collapse-item" href="/usuario">Cad. Usuarios</a>
-                        <a class="collapse-item" href="../noticia">Cad. Notícias</a>
-                    </div>
-                </div>
-            </li> -->
-
             <li class="nav-item">
                 <a class="nav-link" href="/veterinarios">
                     <i class="fas fa-user-md"></i>
@@ -110,80 +93,26 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="/vacinasmeuspets">
-                    <i class="fas fa-syringe"></i>
-                    <span>Vacinas Pet's</span></a>
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Agenda</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/cartao_de_vacinacao">
+                <a class="nav-link" href="/">
                     <i class="fas fa-paw"></i>
                     <span>Cartões de Vacina</span></a>
             </li>
 
-            <!-- Item navergador - Menu Lateral -->
-            <!-- <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Cad. Unitários</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cad. de um registro:</h6>
-                        <a class="collapse-item" href="../vendas">Video Principal</a>
-                        <a class="collapse-item" href="../vendas">Texto Principal</a>
-                    </div>
-                </div>
-            </li> -->
-
             <!-- Linha de divisão -->
             <hr class="sidebar-divider">
 
-            <!-- Heading
-            <div class="sidebar-heading">
-                Adicionais
-            </div>
-
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Relatórios</span>
-                </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Simples:</h6>
-                        <a class="collapse-item" href="#">xxx</a>
-                        <a class="collapse-item" href="#">xxx</a>
-                        <a class="collapse-item" href="#">xxx</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Avançados:</h6>
-                        <a class="collapse-item" href="#">xxx</a>
-                        <a class="collapse-item" href="#">xxx</a>
-                    </div>
-                </div>
-            </li>
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Gráficos</span></a>
-            </li>
-
 
             <!-- Divider -->
-
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
-
-
 
         </ul>
         <!-- End of Sidebar -->
@@ -202,41 +131,14 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS)
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-                        -->
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="/login" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>
                                 <img class="img-profile rounded-circle"
@@ -268,10 +170,6 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"></h1>
-                        <!--
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Botão Teste</a>
-                        -->
                     </div>
 
                     <!-- Content Row -->

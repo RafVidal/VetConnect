@@ -11,7 +11,7 @@ class CriaCartaoDeVacinacao extends Migration
     {
         Schema::create('cartao_de_vacinacao', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->datetime('data');
+            $table->string('data');
             $table->text('descricao');
             /*$table->unsignedBigInteger('vacina_id');
             $table->foreign('vacina_id')->references('id')->on('vacina');

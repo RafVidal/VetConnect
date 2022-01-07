@@ -24,7 +24,6 @@ class Animal extends Model
     ];
 
     protected $table = 'animal';
-    protected $dates = ['nascimento'];
     public $timestamps = false;
 
     public function _cliente(){

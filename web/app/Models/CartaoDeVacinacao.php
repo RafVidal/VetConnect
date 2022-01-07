@@ -18,7 +18,6 @@ class CartaoDeVacinacao extends Model
     ];
 
     protected $table = 'cartao_de_vacinacao';
-    protected $dates = ['data'];
     public $timestamps = false;
 
     public function _vacina(){

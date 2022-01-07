@@ -11,6 +11,7 @@ class CriaVeterinario extends Migration
     {
         Schema::create('veterinario', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('img_vet')->nullable();
             $table->string('nome', 45);
             $table->text('descricao');
             $table->string('atende_domiciliar');

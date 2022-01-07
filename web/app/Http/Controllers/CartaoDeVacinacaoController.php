@@ -79,6 +79,6 @@ class CartaoDeVacinacaoController extends Controller
        $cartao_de_vacinacao->delete();
 
        return redirect()->route('cartao_de_vacinacao.index')
-                        ->with('successo','A exclusão foi um sucesso!');
+                        ->with('success','A exclusão foi um sucesso!');
     }
 }

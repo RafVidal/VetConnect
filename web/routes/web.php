@@ -10,6 +10,7 @@ use App\Http\Controllers\CartaoDeVacinacaoController;
 use App\Http\Controllers\VacinaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VeterinarioController;
+use App\Http\Controllers\VeterinarioUserController;
 use App\Http\Controllers\PetsController;
 
     //=========================================================================
@@ -41,6 +42,8 @@ Route::resource('medicacao', MedicacaoController::class);
 Route::resource('vacina', VacinaController::class);
 
 Route::resource('veterinario', VeterinarioController::class);
+
+Route::resource('veterinarios', VeterinarioUserController::class);
 
     //=========================================================================
     //=============================API=========================================

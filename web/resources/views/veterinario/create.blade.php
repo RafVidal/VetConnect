@@ -33,6 +33,15 @@
     @csrf
 
     <div class="row">
+
+        <strong style="margin-left: 13px;">Foto do veterinário:</strong>
+        <div class="form-row col-xs-12 col-sm-12 col-md-12">
+            <div style="margin-left: 6px;" class="form-group col-md-6">
+                <input type="file" name="img_vet" id="img_vet" class="form-control wd is-valid custom-file-input">
+                <label class="custom-file-label" for="img_vet">Escolha a foto</label>
+            </div>
+        </div>
+
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
                 <strong>Nome:</strong>

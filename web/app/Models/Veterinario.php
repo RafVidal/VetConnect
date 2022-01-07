@@ -10,6 +10,7 @@ class Veterinario extends Model
     use HasFactory;
 
     protected $fillable = [
+        'img_vet',
         'nome',
         'descricao',
         'atende_domiciliar',

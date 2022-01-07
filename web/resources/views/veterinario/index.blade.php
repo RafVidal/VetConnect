@@ -23,7 +23,7 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>ID</th>
+            <th>Foto</th>
             <th>Nome</th>
             <th>Telefone</th>
             <th>Cidade</th>
@@ -32,7 +32,8 @@
         </tr>
         @foreach ($data as $key => $value)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td style="text-align-last: center"><img style="align-self: center"
+                height="50px" width="50px" src="storage/img_vet/{{$value->img_vet}}"/></td>
             <td>{{ $value->nome}}</td>
             <td>{{ $value->telefone}}</td>
             <td>{{ $value->cidade}}</td>
