@@ -8,11 +8,6 @@
                 <div class="card-header">{{ __('Cadastro') }}</div>
 
                 <div class="card-body">
-                    {{--
-                        'numero'                    => 'max:5',
-                        'complemento'               => 'max:45',
-                        'cep'                       => 'required|formato_cep',
-                        --}}
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -65,7 +60,7 @@
                         <div class="row mb-3">
                             <label for="estado" class="col-md-4 col-form-label text-md-right">UF</label>
 
-                            <div class="form-group col-md-6">
+                            <div class="col-md-6">
                                 <select name="estado" class="custom-select" required>
                                     <option> ... </option>
                                     <option> AC </option>
@@ -103,7 +98,7 @@
                             <label for="cidade" class="col-md-4 col-form-label text-md-right">Cidade</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="cidade" class="form-control" name="cidade" required>
+                                <input type="text" id="cidade" placeholder="Insira sua cidade" class="form-control" name="cidade" required>
                             </div>
                         </div>
 
@@ -111,27 +106,39 @@
                             <label for="bairro" class="col-md-4 col-form-label text-md-right">Bairro</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="bairro" class="form-control" name="bairro" required>
+                                <input type="text" id="bairro" placeholder="Insira seu bairro" class="form-control" name="bairro" required>
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            
                                 <label for="rua" class="col-md-4 col-form-label text-md-right">Rua</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="rua" class="form-control" name="rua" required>
+                                    <input type="text" id="rua" placeholder="Insira sua rua" class="form-control" name="rua" required>
                                 </div>
-                            
                         </div>
 
-                        <div class= "row">
-                            <div class="row mb-3">
-                                <label for="numero" class="col-md-4 col-form-label text-md-right">Nº</label>
+                        <div class="row mb-3">
+                            <label for="numero" class="col-md-4 col-form-label text-md-right">N°</label>
 
-                                <div class="col-md-6">
-                                    <input type="text" id="numero" class="form-control" name="numero" required>
-                                </div>
+                            <div class="col-md-3">
+                                <input type="text" id="numero" placeholder="Número" class="form-control" name="numero" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="complemento" class="col-md-4 col-form-label text-md-right">Complemento</label>
+
+                            <div class="col-md-3">
+                                <input type="text" id="complemento" placeholder="Complemento" class="form-control" name="complemento" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="cep" class="col-md-4 col-form-label text-md-right">CEP</label>
+
+                            <div class="col-md-3">
+                                <input type="text" id="cep"  placeholder="00000-000" class="form-control mask-cep" name="cep" required>
                             </div>
                         </div>
 
@@ -143,7 +150,7 @@
                             </div>
                         </div>
 
-                        
+
 
 
                     </form>
@@ -154,11 +161,11 @@
 </div>
 @endsection
 @push('after-scripts')
-    
+
     <script type="text/javascript">
         $(document).ready(function() {
                 $('.mask-telefone').mask('(00) 00000-0000')
-                
+                $('.mask-cep').mask('00000-000');
         });
     </script>
 @endpush
