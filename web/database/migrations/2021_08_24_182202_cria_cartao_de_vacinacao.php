@@ -13,11 +13,11 @@ class CriaCartaoDeVacinacao extends Migration
             $table->bigIncrements('id');
             $table->string('data');
             $table->text('descricao');
-            /*$table->unsignedBigInteger('vacina_id');
+            $table->unsignedBigInteger('vacina_id');
             $table->foreign('vacina_id')->references('id')->on('vacina');
             $table->unsignedBigInteger('animal_id');
             $table->foreign('animal_id')->references('id')->on('animal');
-            */
+            
             $table->timestamps();
 
         });

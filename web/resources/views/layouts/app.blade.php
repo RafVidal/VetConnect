@@ -25,7 +25,7 @@
 
 
     <!-- inclusão de CSS datatables -->
-    <link href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- inclusão de jquery datatables(tive que comentar o jquery lá em baixo) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 </head>
@@ -90,5 +90,8 @@
             @yield('content')
         </main>
     </div>
+    <script scr="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"> </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    @stack('after-scripts')
 </body>
 </html>

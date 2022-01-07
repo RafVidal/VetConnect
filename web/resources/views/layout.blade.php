@@ -23,7 +23,7 @@
     <link href="{{ asset('tema_adm/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- inclusão de CSS datatables -->
-    <link href="cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- inclusão de jquery datatables(tive que comentar o jquery lá em baixo) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
@@ -42,6 +42,7 @@
             $('.mask-placaCarro').mask('AAA-0A00');
             $('.mask-horasMinutos').mask('00:00');
             $('.mask-cartao').mask('0000 0000 0000');
+            $('.mask-telefone').mask('(00) 00000-0000')
         </script>
 
 </head>
