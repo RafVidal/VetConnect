@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Models\User;
+use Session;
 
 class LoginController extends Controller
 {
@@ -17,14 +20,19 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
-    public function authenticate(Request $request)
+
+    public function login(Request $request)
     {
+        dd('teste');
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            //dd('teste');
+            return redirect()->intended(route('welcome'));
+        } else{
+            dd('praga');
         }
     }
 }

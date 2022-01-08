@@ -12,14 +12,17 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VeterinarioController;
 use App\Http\Controllers\VeterinarioUserController;
 use App\Http\Controllers\PetsController;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Auth;
 
     //=========================================================================
     //============================USERS========================================
     //=========================================================================
 
 Route::get('/', function () {
+    dd(auth()->user());
     return view('welcome_users');
-});
+})->name('welcome');
 
 Route::resource('animal', PetsController::class);
 
@@ -31,7 +34,7 @@ Auth::routes();
 
 Route::get('/adm', function () {
     return view('welcome');
-});
+})->name('adm.welcome');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -45,18 +48,58 @@ Route::resource('veterinario', VeterinarioController::class);
 
 Route::resource('veterinarios', VeterinarioUserController::class);
 
+Route::post('/login', ['middleware' => 'auth'])->name('post.login');
+
     //=========================================================================
     //=============================API=========================================
     //=========================================================================
-Route::middleware('api')->name('auth.')->group(function(){
+/*Route::middleware('api')->name('auth.')->group(function(){
     Route::post('me', [AuthController::class, 'me'])->name('me');
     Route::post('login', [AuthController::class, 'login'])->name('logar');
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('refresh', [AuthController::class, 'refresh'])->name('refresh');
-});
+});*/
 
-//Rotas mobile
+//========================================================================
+//============================LOGIN=======================================
+//========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*//Rotas mobile
 Route::prefix('app')->name('app.')->group(function (){
+    
+    
     //=========================================================================
     //==========================CLIENTES=======================================
     //=========================================================================
@@ -111,3 +154,4 @@ Route::prefix('app')->name('app.')->group(function (){
 });
 
 
+*/
