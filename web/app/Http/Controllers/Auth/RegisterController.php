@@ -26,20 +26,41 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'email'         => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password'      => ['required', 'string', 'min:8', 'confirmed'],
+            'telefone'      => ['required', 'celular_com_ddd'],
+            'estado'        => ['required', 'size:2', 'uf'],
+            'cidade'        => ['required', 'max:45'],
+            'bairro'        => ['required', 'max:80'],
+            'rua'           => ['required', 'max:80'],
+            'numero'        => ['max:5'],
+            'complemento'   => ['max:45'],
+            'cep'           => ['required', 'formato_cep']
+            
         ]);
     }
 
     protected function create(array $data)
-    {
+    {  
+       
+        $cliente                            = new Cliente;
+        $cliente->nome                      = $data['nome'];
+        $cliente->telefone                  = $data['telefone'];
+        $cliente->estado                    = $data['estado'];
+        $cliente->CEP                       = $data['cep'];
+        $cliente->cidade                    = $data['cidade'];
+        $cliente->bairro                    = $data['bairro'];
+        $cliente->rua                       = $data['rua'];
+        $cliente->numero                    = $data['numero'];
+        $cliente->complemento               = $data['complemento'];
+        $cliente->save();
 
         return User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'veterinario' => false,
             'cliente'   => true,
-            'cliente_id' => 0,
+            'cliente_id' => $cliente->id,
         ]);
     }
 }

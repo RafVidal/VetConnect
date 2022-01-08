@@ -50,10 +50,18 @@
                         <hr>
 
                         <div class="row mb-3">
+                            <label for="nome" class="col-md-4 col-form-label text-md-right">Nome</label>
+
+                            <div class="col-md-6">
+                                <input type="text" id="nome"  class="form-control" name="nome" value="{{ old('nome') }}" required>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="telefone" class="col-md-4 col-form-label text-md-right">Telefone</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="telefone"  placeholder="(99) 99999-9999" class="form-control mask-telefone" name="telefone" required>
+                                <input type="text" id="telefone"  placeholder="(99) 99999-9999" class="form-control mask-telefone" name="telefone" value="{{ old('telefone') }}" required>
                             </div>
                         </div>
 
@@ -63,8 +71,8 @@
                             <div class="col-md-6">
                                 <select name="estado" class="custom-select" required>
                                     <option> ... </option>
-                                    <option> AC </option>
-                                    <option> AL </option>
+                                    <option {{old('estado') == 'AC' ? 'selected' : ''}}> AC </option>
+                                    <option {{old('estado') == 'AL' ? 'selected' : ''}}> AL </option>
                                     <option> AP </option>
                                     <option> AM </option>
                                     <option> BA </option>
@@ -95,10 +103,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="cidade" class="col-md-4 col-form-label text-md-right">Cidade</label>
+                            <label for="cidade" class="col-md-4 col-form-label text-md-right" >Cidade</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="cidade" placeholder="Insira sua cidade" class="form-control" name="cidade" required>
+                                <input type="text" id="cidade" placeholder="Insira sua cidade" class="form-control" value="{{ old('cidade') }}" name="cidade" required>
                             </div>
                         </div>
 
@@ -106,7 +114,7 @@
                             <label for="bairro" class="col-md-4 col-form-label text-md-right">Bairro</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="bairro" placeholder="Insira seu bairro" class="form-control" name="bairro" required>
+                                <input type="text" id="bairro" placeholder="Insira seu bairro" class="form-control" name="bairro" value="{{ old('bairro') }}" required>
                             </div>
                         </div>
 
@@ -114,7 +122,7 @@
                                 <label for="rua" class="col-md-4 col-form-label text-md-right">Rua</label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="rua" placeholder="Insira sua rua" class="form-control" name="rua" required>
+                                    <input type="text" id="rua" placeholder="Insira sua rua" class="form-control" name="rua" value="{{ old('rua') }}" required>
                                 </div>
                         </div>
 
@@ -122,23 +130,23 @@
                             <label for="numero" class="col-md-4 col-form-label text-md-right">N°</label>
 
                             <div class="col-md-3">
-                                <input type="text" id="numero" placeholder="Número" class="form-control" name="numero" required>
+                                <input type="text" id="numero" placeholder="Número" class="form-control" name="numero" value="{{ old('numero') }}">
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="complemento" class="col-md-4 col-form-label text-md-right">Complemento</label>
 
-                            <div class="col-md-3">
-                                <input type="text" id="complemento" placeholder="Complemento" class="form-control" name="complemento" required>
+                            <div class="col-md-6">
+                                <input type="text" id="complemento" placeholder="Complemento" class="form-control" name="complemento" value="{{ old('complemento') }}">
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <label for="cep" class="col-md-4 col-form-label text-md-right">CEP</label>
 
-                            <div class="col-md-3">
-                                <input type="text" id="cep"  placeholder="00000-000" class="form-control mask-cep" name="cep" required>
+                            <div class="col-md-6">
+                                <input type="text" id="cep"  placeholder="00000-000" class="form-control mask-cep" name="cep" value="{{ old('cep') }}" required>
                             </div>
                         </div>
 
