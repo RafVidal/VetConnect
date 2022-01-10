@@ -73,31 +73,31 @@
                                     <option> ... </option>
                                     <option {{old('estado') == 'AC' ? 'selected' : ''}}> AC </option>
                                     <option {{old('estado') == 'AL' ? 'selected' : ''}}> AL </option>
-                                    <option> AP </option>
-                                    <option> AM </option>
-                                    <option> BA </option>
-                                    <option> CE </option>
-                                    <option> DF </option>
-                                    <option> ES </option>
-                                    <option> GO </option>
-                                    <option> MA </option>
-                                    <option> MT </option>
-                                    <option> MS </option>
-                                    <option> MG </option>
-                                    <option> PA </option>
-                                    <option> PB </option>
-                                    <option> PR </option>
-                                    <option> PE </option>
-                                    <option> PI </option>
-                                    <option> RJ </option>
-                                    <option> RN </option>
-                                    <option> RS </option>
-                                    <option> RO </option>
-                                    <option> RR </option>
-                                    <option> SC </option>
-                                    <option> SP </option>
-                                    <option> SE </option>
-                                    <option> TO </option>
+                                    <option {{old('estado') == 'AP' ? 'selected' : ''}}> AP </option>
+                                    <option {{old('estado') == 'AM' ? 'selected' : ''}}> AM </option>
+                                    <option {{old('estado') == 'BA' ? 'selected' : ''}}> BA </option>
+                                    <option {{old('estado') == 'CE' ? 'selected' : ''}}> CE </option>
+                                    <option {{old('estado') == 'DF' ? 'selected' : ''}}> DF </option>
+                                    <option {{old('estado') == 'ES' ? 'selected' : ''}}> ES </option>
+                                    <option {{old('estado') == 'GO' ? 'selected' : ''}}> GO </option>
+                                    <option {{old('estado') == 'MA' ? 'selected' : ''}}> MA </option>
+                                    <option {{old('estado') == 'MT' ? 'selected' : ''}}> MT </option>
+                                    <option {{old('estado') == 'MS' ? 'selected' : ''}}> MS </option>
+                                    <option {{old('estado') == 'MG' ? 'selected' : ''}}> MG </option>
+                                    <option {{old('estado') == 'PA' ? 'selected' : ''}}> PA </option>
+                                    <option {{old('estado') == 'PB' ? 'selected' : ''}}> PB </option>
+                                    <option {{old('estado') == 'PR' ? 'selected' : ''}}> PR </option>
+                                    <option {{old('estado') == 'PE' ? 'selected' : ''}}> PE </option>
+                                    <option {{old('estado') == 'PI' ? 'selected' : ''}}> PI </option>
+                                    <option {{old('estado') == 'RJ' ? 'selected' : ''}}> RJ </option>
+                                    <option {{old('estado') == 'RN' ? 'selected' : ''}}> RN </option>
+                                    <option {{old('estado') == 'RS' ? 'selected' : ''}}> RS </option>
+                                    <option {{old('estado') == 'RO' ? 'selected' : ''}}> RO </option>
+                                    <option {{old('estado') == 'RR' ? 'selected' : ''}}> RR </option>
+                                    <option {{old('estado') == 'SC' ? 'selected' : ''}}> SC </option>
+                                    <option {{old('estado') == 'SP' ? 'selected' : ''}}> SP </option>
+                                    <option {{old('estado') == 'SE' ? 'selected' : ''}}> SE </option>
+                                    <option {{old('estado') == 'TO' ? 'selected' : ''}}> TO </option>
                                 </select>
                             </div>
                         </div>
