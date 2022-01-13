@@ -146,7 +146,7 @@
                             <label for="cep" class="col-md-4 col-form-label text-md-right">CEP</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="cep"  placeholder="00000-000" class="form-control mask-cep" name="cep" value="{{ old('cep') }}" required>
+                                <input type="text" id="cep" placeholder="00000-000" class="form-control mask-cep" name="cep" value="{{ old('cep') }}" required>
                             </div>
                         </div>
 
@@ -177,3 +177,4 @@
         });
     </script>
 @endpush
+

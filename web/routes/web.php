@@ -26,6 +26,14 @@ Route::get('/', function () {
 
 Route::resource('animal', PetsController::class);
 
+Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
+Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
+Route::post('evento/adicionar', [App\Http\Controllers\EventoController::class, 'store']);
+Route::post('evento/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
+Route::post('evento/atualizar/{evento}', [App\Http\Controllers\EventoController::class, 'update']);
+Route::post('evento/excluir/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
+
+
     //=========================================================================
     //============================ADMS=========================================
     //=========================================================================
@@ -98,8 +106,8 @@ Route::post('/login', ['middleware' => 'auth'])->name('post.login');
 
 /*//Rotas mobile
 Route::prefix('app')->name('app.')->group(function (){
-    
-    
+
+
     //=========================================================================
     //==========================CLIENTES=======================================
     //=========================================================================

@@ -49,7 +49,7 @@
             </div>
             <div class="form-group col-md-6">
                 <strong>Telefone:</strong>
-                <input type="text" name="telefone" class="form-control is-valid" placeholder="Telefone" required>
+                <input type="text" name="telefone" class="form-control mask-telefone is-valid" placeholder="(99) 99999-9999" required>
             </div>
         </div>
 
@@ -96,7 +96,7 @@
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
                 <strong>CEP:</strong>
-                <input type="text" name="CEP" class="form-control is-valid" placeholder="CEP" required>
+                <input type="text" name="CEP" class="form-control mask-cep is-valid" placeholder="00000-000" required>
             </div>
             <div class="form-group col-md-6">
                 <strong>Bairro:</strong>
@@ -145,3 +145,11 @@
 
 </form>
 @endsection
+@push('after-scripts')
+    <script type="text/javascript">
+        $(document).ready(function() {
+                $('.mask-telefone').mask('(00) 00000-0000')
+                $('.mask-cep').mask('00000-000');
+        });
+    </script>
+@endpush
