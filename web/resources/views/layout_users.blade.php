@@ -152,7 +152,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="/login" id="userDropdown" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>
                                 <img class="img-profile rounded-circle"
@@ -166,7 +166,7 @@
                                     Entrar
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Sair
                                 </a>
@@ -234,7 +234,7 @@
                 <div class="modal-body">Clique em "Sair" se você deseja sair.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="login.html">Sair</a>
+                    <a class="btn btn-primary" href="/logout">Sair</a>
                 </div>
             </div>
         </div>
@@ -269,8 +269,9 @@
     <script src="{{ asset('tema_adm/js/demo/chart-pie-demo.js') }}"></script>
     -->
 
-
-
+    
 
 </body>
 </html>
+
+

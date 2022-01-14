@@ -12,9 +12,18 @@ use Session;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers;
+    
+        use AuthenticatesUsers;
 
-    protected $redirectTo = RouteServiceProvider::HOME;
+
+        protected function authenticated(Request $request, $user)
+        {
+            if ( $user->isAdmin() ) {// do your magic here
+                return redirect()->route('dashboard');
+            }
+
+            return redirect('/');
+        }
 
     public function __construct()
     {
@@ -23,16 +32,31 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        dd('teste');
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
 
         if (Auth::attempt($credentials)) {
             
             // Authentication passed...
-            //dd('teste');
-            return redirect()->intended(route('welcome'));
-        } else{
-            dd('praga');
-        }
+            //dd(Auth::user());
+            $request->session()->regenerate();
+            return redirect()->intended('welcome');
+        } 
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
