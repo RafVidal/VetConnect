@@ -59,16 +59,16 @@
             </div>
         </div>
 
-        <!-- <div class="form-row col-xs-12 col-sm-12 col-md-12">
+        <div class="form-row col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group col-md-6">
+                <strong>Vacina ID:</strong>
+                <input type="text" name="vacina_id" id="vacina_id" class="form-control is-valid" placeholder="ID do vacina" required>
+            </div>
             <div class="form-group col-md-6">
                 <strong>Animal ID:</strong>
-                <input type="text" name="animal_id" class="form-control is-valid" placeholder="ID do animal" required>
+                <input type="text" name="animal_id" id="animal_id" class="form-control is-valid" placeholder="ID do animal" required>
             </div>
-            <div class="form-group col-md-6">
-                <strong>Veterinário ID:</strong>
-                <input type="text" name="veterinario_id" class="form-control is-valid" placeholder="ID do veterinário" required>
-            </div>
-        </div> -->
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn btn-primary" href="{{ route('cartao_de_vacinacao.index') }}"> Voltar</a>

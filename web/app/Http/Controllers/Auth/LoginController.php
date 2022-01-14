@@ -12,7 +12,7 @@ use Session;
 
 class LoginController extends Controller
 {
-    
+
         use AuthenticatesUsers;
 
 
@@ -38,12 +38,12 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            
+
             // Authentication passed...
             //dd(Auth::user());
             $request->session()->regenerate();
             return redirect()->intended('welcome');
-        } 
+        }
 
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',

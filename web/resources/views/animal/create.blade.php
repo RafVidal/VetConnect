@@ -101,16 +101,12 @@
             </div>
         </div>
 
-        <!-- <div class="form-row col-xs-12 col-sm-12 col-md-12">
+        <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
-                <strong>Animal ID:</strong>
-                <input type="text" name="animal_id" class="form-control is-valid" placeholder="ID do animal" required>
+                <strong>Cliente ID:</strong>
+                <input type="text" name="cliente_id" id="cliente_id" class="form-control is-valid" placeholder="ID do cliente" required>
             </div>
-            <div class="form-group col-md-6">
-                <strong>Veterinário ID:</strong>
-                <input type="text" name="veterinario_id" class="form-control is-valid" placeholder="ID do veterinário" required>
-            </div>
-        </div> -->
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn btn-primary" href="{{ route('animal.index') }}"> Voltar</a>

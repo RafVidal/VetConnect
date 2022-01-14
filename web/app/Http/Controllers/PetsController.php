@@ -44,9 +44,8 @@ class PetsController extends Controller
             'sexo' => 'required',
             'cor' => 'required',
             'nascimento' => 'required',
-        /*  'cliente_id' => 'required',
-            'especie_id' => 'required',
-        */
+            'cliente_id' => 'required',
+
         ]);
 
         $itens= Animal::create([
@@ -57,9 +56,8 @@ class PetsController extends Controller
             'sexo'=>$request->sexo,
             'cor'=>$request->cor,
             'nascimento'=>$request->nascimento,
-        /*  'cliente_id'=>$request->cliente_id,
-            'especie_id'=>$request->especie_id,
-        */
+            'cliente_id'=>$request->cliente_id,
+
         ]);
 
         return redirect()->route('animal.index')
@@ -87,9 +85,7 @@ class PetsController extends Controller
             'sexo' => 'required',
             'cor' => 'required',
             'nascimento' => 'required',
-        /*  'cliente_id' => 'required',
-            'especie_id' => 'required',
-        */
+            'cliente_id' => 'required'
         ]);
 
         $animal -> update($request->all());

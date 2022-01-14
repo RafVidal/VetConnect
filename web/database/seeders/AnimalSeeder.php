@@ -7,11 +7,6 @@ use App\Models\Animal;
 
 class AnimalSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
 
@@ -19,7 +14,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 1,
                 "nome"=> "Farofa",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Labrador",
                 "sexo"=> 1,
                 "cor"=> "Marrom",
@@ -29,7 +24,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 2,
                 "nome"=> "Laila",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Pastor Alemão",
                 "sexo"=> 0,
                 "cor"=> "Preta",
@@ -39,7 +34,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 3,
                 "nome"=> "Bombom",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Pinscher Tremedera",
                 "sexo"=> 1,
                 "cor"=> "Preto",
@@ -49,7 +44,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 4,
                 "nome"=> "Brida",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Vira-Lata",
                 "sexo"=> 0,
                 "cor"=> "Bege",
@@ -59,7 +54,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 5,
                 "nome"=> "Kira",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Labrador",
                 "sexo"=> 0,
                 "cor"=> "Branco",
@@ -69,7 +64,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 6,
                 "nome"=> "Jonas",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Dobberman",
                 "sexo"=> 1,
                 "cor"=> "Preto",
@@ -79,7 +74,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 7,
                 "nome"=> "Thor",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Boxer",
                 "sexo"=> 1,
                 "cor"=> "Marrom",
@@ -89,7 +84,7 @@ class AnimalSeeder extends Seeder
             [
                 "id"=> 8,
                 "nome"=> "Melancia",
-                "especie_id"=> 1,
+                "especie"=> "Cachorro",
                 "raca"=> "Pitbull",
                 "sexo"=> 0,
                 "cor"=> "Branca",
@@ -100,7 +95,7 @@ class AnimalSeeder extends Seeder
         foreach($animais as $ani){
             $animal                            = new Animal;
             $animal->nome                      = $ani['nome'];
-            $animal->especie_id                = $ani['especie_id'];
+            $animal->especie                = $ani['especie'];
             $animal->raca                      = $ani['raca'];
             $animal->sexo                      = $ani['sexo'];
             $animal->cor                       = $ani['cor'];

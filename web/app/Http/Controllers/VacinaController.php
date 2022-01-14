@@ -28,9 +28,6 @@ class VacinaController extends Controller
             'idade_animal' => 'required',
             'descricao' => 'required',
             'obrigatoria' => 'required',
-        /*
-            'especie_id' => 'required',
-        */
         ]);
 
         $itens= Vacina::create([
@@ -38,9 +35,6 @@ class VacinaController extends Controller
             'idade_animal'=>$request->idade_animal,
             'descricao'=>mb_strtolower($request->descricao),
             'obrigatoria'=>$request->obrigatoria,
-        /*
-            'especie_id'=>$request->especie_id,
-        */
         ]);
 
         return redirect()->route('vacina.index')
@@ -66,9 +60,6 @@ class VacinaController extends Controller
             'idade_animal' => 'required',
             'descricao' => 'required',
             'obrigatoria' => 'required',
-        /*
-            'especie_id' => 'required',
-        */
         ]);
 
         $vacina -> update($request->all());

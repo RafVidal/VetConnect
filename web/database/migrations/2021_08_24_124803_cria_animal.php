@@ -14,8 +14,6 @@ class CriaAnimal extends Migration
             $table->string('img_pet')->nullable();
             $table->string('nome', 45);
             $table->string('especie', 45)->nullable();
-            $table->unsignedBigInteger('especie_id')->nullable();
-            $table->foreign('especie_id')->references('id')->on('especie');
             $table->string('raca')->nullable();
             $table->string('sexo');
             $table->string('cor', 45);

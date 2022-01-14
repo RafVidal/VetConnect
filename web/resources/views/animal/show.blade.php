@@ -60,7 +60,7 @@
         </div>
         <div>᲼᲼᲼᲼᲼᲼</div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="">Cartão de Vacina do Animal</a>
+            <a class="btn btn-primary" href="/cartao_de_vacinacao">Cartão de Vacina do Animal</a>
         </div>
         <div>᲼᲼᲼᲼᲼᲼</div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

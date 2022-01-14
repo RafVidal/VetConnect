@@ -12,9 +12,9 @@ class CartaoDeVacinacao extends Model
     protected $fillable = [
         'descricao',
         'data',
-    /*  'animal_id',
-        'veterinario_id',
-    */
+        'vacina_id',
+        'animal_id',
+
     ];
 
     protected $table = 'cartao_de_vacinacao';

@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CriaVeterinarioVacina extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('veterinario_vacina', function (Blueprint $table) {

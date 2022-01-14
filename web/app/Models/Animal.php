@@ -18,9 +18,7 @@ class Animal extends Model
         'sexo',
         'cor',
         'nascimento',
-    /*  'cliente_id',
-        'especie_id',
-    */
+        'cliente_id',
     ];
 
     protected $table = 'animal';
@@ -29,9 +27,5 @@ class Animal extends Model
     public function _cliente(){
         $this->hasOne('App/Models/Cliente',
                 'id', 'cliente_id');
-    }
-    public function _especie(){
-        $this->hasOne('App/Models/Especie',
-                'id', 'especie_id');
     }
 }
