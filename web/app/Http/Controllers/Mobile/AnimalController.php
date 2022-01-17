@@ -44,7 +44,7 @@ class AnimalController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nome'                      => 'required|max:150',
-            'especie_id'                => 'required|exists:especie,id',
+            'especie'                => 'required|exists:especie,id',
             'raca'                      => 'max:20',
             'sexo'                      => 'required|boolean',
             'cor'                       => 'max:20',
@@ -61,7 +61,7 @@ class AnimalController extends Controller
             //Cria o animal
             $animal                            = new Animal;
             $animal->nome                      = $request->nome;
-            $animal->especie_id                = $request->especie_id ;
+            $animal->especie                   = $request->especie;
             $animal->raca                      = $request->raca;
             $animal->sexo                      = $request->sexo;
             $animal->cor                       = $request->cor;
@@ -115,7 +115,7 @@ class AnimalController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nome'                      => 'required|max:150',
-            'especie_id'                => 'required|exists:especie,id',
+            'especie'                => 'required|exists:especie,id',
             'raca'                      => 'max:20',
             'sexo'                      => 'required|boolean',
             'cor'                       => 'max:20',
@@ -132,7 +132,7 @@ class AnimalController extends Controller
             //Atualiza o animal
             $animal                            = Animal::findOrFail($id);
             $animal->nome                      = $request->nome;
-            $animal->especie_id                = $request->especie_id ;
+            $animal->especie                   = $request->especie ;
             $animal->raca                      = $request->raca;
             $animal->sexo                      = $request->sexo;
             $animal->cor                       = $request->cor;

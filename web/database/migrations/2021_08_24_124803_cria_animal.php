@@ -13,7 +13,7 @@ class CriaAnimal extends Migration
             $table->bigIncrements('id');
             $table->string('img_pet')->nullable();
             $table->string('nome', 45);
-            $table->string('especie', 45)->nullable();
+            $table->string('especie', 45);
             $table->string('raca')->nullable();
             $table->string('sexo');
             $table->string('cor', 45);

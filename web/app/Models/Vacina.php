@@ -14,9 +14,6 @@ class Vacina extends Model
         'idade_animal',
         'descricao',
         'obrigatoria',
-    /*
-        'especie_id',
-    */
     ];
 
     protected $table = 'vacina';
