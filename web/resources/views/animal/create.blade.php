@@ -37,7 +37,7 @@
         <strong style="margin-left: 13px;">Foto do animal:</strong>
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div style="margin-left: 6px;" class="form-group col-md-6">
-                <input type="file" name="img_pet" id="img_pet" class="form-control wd is-valid custom-file-input">
+                <input type="file" name="img_pet" id="img_pet" class="form-control wd is-valid custom-file-input" required>
                 <label class="custom-file-label" for="img_pet">Escolha a foto</label>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="form-group col-md-6">
                 <strong> Espécie: </strong>
                 <select name="especie" class="custom-select" required>
-                    <option> Espécies... </option>
+                    <option value=""> ... </option>
                     <option> Cachorro </option>
                     <option> Gato </option>
                     <option> Furão </option>
@@ -72,7 +72,7 @@
         <div class="form-group col-md-6">
             <strong> Sexo: </strong>
             <select name="sexo" class="custom-select" required>
-                <option> ... </option>
+                <option value=""> ... </option>
                 <option> Macho </option>
                 <option> Fêmea </option>
             </select>

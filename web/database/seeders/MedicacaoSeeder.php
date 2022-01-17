@@ -9,11 +9,6 @@ use \Carbon\Carbon;
 
 class MedicacaoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $medicacao                      = new Medicacao;
@@ -23,7 +18,6 @@ class MedicacaoSeeder extends Seeder
         $medicacao->intervalo           = 12;
         $medicacao->data_fim            = Carbon::createFromFormat('d/m/Y H:i', '24/12/2021 10:00');
         $medicacao->animal_id           = 1;
-        $medicacao->veterinario_id      = 1;
         $medicacao->save();
 
     }

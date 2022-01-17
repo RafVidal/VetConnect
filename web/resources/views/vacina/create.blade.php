@@ -49,7 +49,7 @@
             <div class="form-group col-md-6">
                 <strong> Obrigatória </strong>
                 <select name="obrigatoria" class="custom-select is-valid" required>
-                    <option> Selecione... </option>
+                    <option value=""> ... </option>
                     <option> Sim </option>
                     <option> Não </option>
                 </select>
@@ -62,15 +62,6 @@
                 <textarea class="form-control is-valid" style="height:45px" name="descricao" placeholder="Insira a descrição" required></textarea>
             </div>
         </div>
-
-
-
-        <!-- <div class="form-row col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group col-md-6">
-                <strong>Espécie ID:</strong>
-                <input type="text" name="especie_id" class="form-control is-valid" placeholder="ID do animal" required>
-            </div>
-         -->
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn btn-primary" href="{{ route('vacina.index') }}"> Voltar</a>

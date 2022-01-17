@@ -15,9 +15,8 @@ class Medicacao extends Model
         'dosagem',
         'intervalo',
         'data_fim',
-    /*  'animal_id',
-        'veterinario_id',
-    */
+        'animal_id',
+
     ];
 
     protected $table = 'medicacao';

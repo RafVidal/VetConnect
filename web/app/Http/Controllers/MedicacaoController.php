@@ -29,9 +29,7 @@ class MedicacaoController extends Controller
             'dosagem' => 'required',
             'intervalo' => 'required',
             'data_fim' => 'required',
-        /*  'animal_id' => 'required',
-            'veterinario_id' => 'required',
-        */
+            'animal_id' => 'required',
         ]);
 
         $itens= Medicacao::create([
@@ -40,9 +38,7 @@ class MedicacaoController extends Controller
             'dosagem'=>$request->dosagem,
             'intervalo'=>$request->intervalo,
             'data_fim'=>$request->data_fim,
-        /*  'animal_id'=>$request->animal_id,
-            'veterinario_id'=>$request->veterinario_id,
-        */
+            'animal_id'=>$request->animal_id,
         ]);
 
         return redirect()->route('medicacao.index')
@@ -69,9 +65,8 @@ class MedicacaoController extends Controller
             'dosagem' => 'required',
             'intervalo' => 'required',
             'data_fim' => 'required',
-            /*'animal_id' => 'required',
-            'veterinario_id' => 'required',
-*/
+            'animal_id' => 'required',
+
         ]);
 
         $medicacao -> update($request->all());

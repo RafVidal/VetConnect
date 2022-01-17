@@ -129,8 +129,8 @@
                         <div class="row mb-3">
                             <label for="numero" class="col-md-4 col-form-label text-md-right">N°</label>
 
-                            <div class="col-md-3">
-                                <input type="text" id="numero" placeholder="Número" class="form-control" name="numero" value="{{ old('numero') }}">
+                            <div class="col-md-4">
+                                <input type="text" id="numero" placeholder="Número (Opcional)" class="form-control" name="numero" value="{{ old('numero') }}">
                             </div>
                         </div>
 
@@ -138,7 +138,7 @@
                             <label for="complemento" class="col-md-4 col-form-label text-md-right">Complemento</label>
 
                             <div class="col-md-6">
-                                <input type="text" id="complemento" placeholder="Complemento" class="form-control" name="complemento" value="{{ old('complemento') }}">
+                                <input type="text" id="complemento" placeholder="Complemento (Opcional)" class="form-control" name="complemento" value="{{ old('complemento') }}">
                             </div>
                         </div>
 

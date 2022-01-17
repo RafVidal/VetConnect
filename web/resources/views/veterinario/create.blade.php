@@ -29,7 +29,7 @@
     </div>
 @endif
 
-<form action="{{ route('veterinario.store') }}" method="POST" class="container" novalidate="" enctype="multipart/form-data">
+<form action="{{ route('veterinario.store') }}" method="POST" class="container was-validated" novalidate="" enctype="multipart/form-data">
     @csrf
 
     <div class="row">
@@ -37,7 +37,7 @@
         <strong style="margin-left: 13px;">Foto do veterinário:</strong>
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div style="margin-left: 6px;" class="form-group col-md-6">
-                <input type="file" name="img_vet" id="img_vet" class="form-control wd is-valid custom-file-input">
+                <input type="file" name="img_vet" id="img_vet" class="form-control wd is-valid custom-file-input" required>
                 <label class="custom-file-label" for="img_vet">Escolha a foto</label>
             </div>
         </div>
@@ -61,7 +61,7 @@
             <div class="form-group col-md-6">
                 <strong> Estado </strong>
                 <select name="estado" class="custom-select" required>
-                    <option> Estado </option>
+                    <option value=""> ... </option>
                     <option> AC </option>
                     <option> AL </option>
                     <option> AP </option>
@@ -122,8 +122,8 @@
             </div>
             <div class="form-group col-md-6">
                 <strong> Atende em domicílio: </strong>
-                <select name="atende_domiciliar" class="custom-select">
-                    <option> ... </option>
+                <select name="atende_domiciliar" class="custom-select" required>
+                    <option value=""> ... </option>
                     <option> Sim </option>
                     <option> Não </option>
                 </select>

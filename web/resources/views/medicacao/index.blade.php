@@ -23,7 +23,6 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>Id</th>
             <th>Medicamento</th>
             <th>Dosagem</th>
             <th>Intervalo</th>
@@ -33,7 +32,6 @@
         </tr>
         @foreach ($data as $key => $value)
         <tr>
-            <td>{{ ++$i }}</td>
             <td>{{ $value->medicamento }}</td>
             <td>{{ $value->dosagem }}</td>
             <td>{{ $value->intervalo }}</td>

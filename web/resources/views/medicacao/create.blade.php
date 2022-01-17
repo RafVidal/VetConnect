@@ -43,12 +43,11 @@
                 <strong>Dosagem:</strong>
                 <input type="text" name="dosagem" class="form-control is-valid" placeholder="00 mg" required>
             </div>
-
-       <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
                 <strong>Intervalo:</strong>
                 <input type="text" name="intervalo" class="form-control is-valid" placeholder="Intervalo de tempo" required>
             </div>
+        </div>
 
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
@@ -66,6 +65,10 @@
                 })
                 </script>
             </div>
+            <div class="form-group col-md-6">
+                <strong>Animal ID:</strong>
+                <input type="text" name="animal_id" class="form-control is-valid" placeholder="ID do animal" required>
+            </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -75,16 +78,10 @@
             </div>
         </div>
 
-        <!-- <div class="form-row col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group col-md-6">
-                <strong>Animal ID:</strong>
-                <input type="text" name="animal_id" class="form-control is-valid" placeholder="ID do animal" required>
-            </div>
-            <div class="form-group col-md-6">
-                <strong>Veterinário ID:</strong>
-                <input type="text" name="veterinario_id" class="form-control is-valid" placeholder="ID do veterinário" required>
-            </div>
-        </div> -->
+        <div class="form-row col-xs-12 col-sm-12 col-md-12">
+
+
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn btn-primary" href="{{ route('medicacao.index') }}"> Voltar</a>

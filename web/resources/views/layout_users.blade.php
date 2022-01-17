@@ -111,12 +111,6 @@
                     <span>Agenda</span></a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-paw"></i>
-                    <span>Cartões de Vacina</span></a>
-            </li>
-
             <!-- Linha de divisão -->
             <hr class="sidebar-divider">
 

@@ -86,6 +86,12 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="/animal">
+                    <i class="fas fa-paw"></i>
+                    <span>Pet's</span></a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="/medicacao">
                     <i class="fas fa-pills"></i>
                     <span>Medicações</span></a>
@@ -95,12 +101,6 @@
                 <a class="nav-link" href="/vacina">
                     <i class="fas fa-syringe"></i>
                     <span>Vacinas</span></a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/cartao_de_vacinacao">
-                    <i class="fas fa-paw"></i>
-                    <span>Cartões de Vacina</span></a>
             </li>
 
             <!-- Linha de divisão -->
@@ -246,7 +246,12 @@
     <script src="{{ asset('tema_adm/js/demo/chart-pie-demo.js') }}"></script>
     -->
 
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+                $('.mask-telefone').mask('(00) 00000-0000')
+                $('.mask-cep').mask('00000-000');
+        });
+    </script>
 
 
 </body>
