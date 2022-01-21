@@ -36,13 +36,13 @@ class RegisterController extends Controller
             'numero'        => ['max:5'],
             'complemento'   => ['max:45'],
             'cep'           => ['required', 'formato_cep']
-            
+
         ]);
     }
 
     protected function create(array $data)
-    {  
-       
+    {
+
         $cliente                            = new Cliente;
         $cliente->nome                      = $data['nome'];
         $cliente->telefone                  = $data['telefone'];
@@ -58,9 +58,7 @@ class RegisterController extends Controller
         return User::create([
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'veterinario' => false,
-            'cliente'   => true,
-            'cliente_id' => $cliente->id,
+            'isAdmin' => '0',
         ]);
     }
 }

@@ -26,6 +26,7 @@ class CartaoDeVacinacaoController extends Controller
         $request->validate([
             'data' => 'required',
             'descricao' => 'required',
+            'status' => 'required',
             'vacina_id' => 'required',
             'animal_id' => 'required',
         ]);
@@ -33,6 +34,7 @@ class CartaoDeVacinacaoController extends Controller
         $itens= CartaoDeVacinacao::create([
             'data'=>$request->data,
             'descricao'=>mb_strtolower($request->descricao),
+            'status'=>$request->status,
             'vacina_id'=>$request->vacina_id,
             'animal_id'=>$request->animal_id,
 
@@ -44,7 +46,8 @@ class CartaoDeVacinacaoController extends Controller
 
     public function show(CartaoDeVacinacao $cartao_de_vacinacao)
     {
-         return view('cartao_de_vacinacao.show',compact('cartao_de_vacinacao'));
+        $cartao_de_vacinacao= CartaoDeVacinacao::all();
+        return view('cartao_de_vacinacao.show',['cartao_de_vacinacao'=>$cartao_de_vacinacao]);
     }
 
     public function edit(CartaoDeVacinacao $cartao_de_vacinacao)
@@ -59,8 +62,7 @@ class CartaoDeVacinacaoController extends Controller
         $request->validate([
             'data' => 'required',
             'descricao' => 'required',
-            'vacina_id' => 'required',
-            'animal_id' => 'required',
+            'status' => 'required',
         ]);
 
         $cartao_de_vacinacao -> update($request->all());

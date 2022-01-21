@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 <div class="card shadow mb-4">
@@ -17,21 +17,23 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>᲼᲼᲼᲼᲼᲼᲼</strong>
-            </div>
-        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Data da Vacina:</strong>
-                {{ $cartao_de_vacinacao->data}}
+                {{$cartao_de_vacinacao->data}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Descrição:</strong>
-                {{ $cartao_de_vacinacao->descricao }}
+                {{$cartao_de_vacinacao->descricao}}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Descrição:</strong>
+                {{$cartao_de_vacinacao->vacina_id}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -40,7 +42,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('cartao_de_vacinacao.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('veterinario.index')}}"> Voltar</a>
         </div>
     </div>
     </div>

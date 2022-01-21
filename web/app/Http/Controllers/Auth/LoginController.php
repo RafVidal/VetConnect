@@ -18,10 +18,9 @@ class LoginController extends Controller
 
         protected function authenticated(Request $request, $user)
         {
-            if ( $user->isAdmin() ) {// do your magic here
-                return redirect()->route('dashboard');
+            if ( Auth::isAdmin() == 1) {// do your magic here
+                return redirect()->route('/adm');
             }
-
             return redirect('/');
         }
 
@@ -42,7 +41,7 @@ class LoginController extends Controller
             // Authentication passed...
             //dd(Auth::user());
             $request->session()->regenerate();
-            return redirect()->intended('welcome');
+            return redirect()->intended('/');
         }
 
         return back()->withErrors([
@@ -57,6 +56,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 }

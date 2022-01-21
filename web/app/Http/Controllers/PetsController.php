@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Animal;
+use App\Models\Medicacao;
+use App\Models\CartaoDeVacinacao;
 use Illuminate\Http\Request;
 
 class PetsController extends Controller
@@ -64,9 +66,12 @@ class PetsController extends Controller
                         ->with('success','Pet adicionado com sucesso');
     }
 
-    public function show(Animal $animal)
+    public function show($id)
     {
-         return view('animal.show',compact('animal'));
+        $animal = Animal::findorfail ($id);
+        $cartao_de_vacinacao= CartaoDeVacinacao::all();
+        $medicacao= Medicacao::all();
+        return view('animal.show',['cartao_de_vacinacao'=>$cartao_de_vacinacao,'medicacao'=>$medicacao,'animal'=>$animal]);
     }
 
     public function edit(Animal $animal)
@@ -85,7 +90,6 @@ class PetsController extends Controller
             'sexo' => 'required',
             'cor' => 'required',
             'nascimento' => 'required',
-            'cliente_id' => 'required'
         ]);
 
         $animal -> update($request->all());

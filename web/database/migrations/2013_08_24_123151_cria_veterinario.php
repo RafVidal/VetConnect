@@ -25,6 +25,7 @@ class CriaVeterinario extends Migration
             $table->string('complemento', 45)->nullable();
             $table->timestamps();
             $table->softDeletes();
+
         });
     }
 

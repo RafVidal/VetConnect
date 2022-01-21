@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 <div class="card shadow mb-4">

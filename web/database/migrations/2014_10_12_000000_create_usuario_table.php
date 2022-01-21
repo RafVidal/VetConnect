@@ -13,12 +13,7 @@ class CreateUsuarioTable extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
-            $table->unsignedBigInteger('cliente_id')->nullable();
-            $table->foreign('cliente_id')->references('id')->on('cliente');
-            $table->boolean('cliente');
-            $table->unsignedBigInteger('veterinario_id')->nullable();
-            $table->foreign('veterinario_id')->references('id')->on('veterinario');
-            $table->boolean('veterinario');
+            $table->boolean('isAdmin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Veterinario;
+use Illuminate\Support\Facades\Hash;
 
 class VeterinarioController extends Controller
 {
+
+    protected $redirectTo = RouteServiceProvider::HOME;
+
     public function index()
     {
         $data = Veterinario::latest()->paginate(5);
@@ -37,22 +43,26 @@ class VeterinarioController extends Controller
         }
 
         $request->validate([
-            'img_vet'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'nome' => 'required',
-            'descricao' => 'required',
+            'email'             => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'password'          => ['required', 'string', 'min:8', 'confirmed'],
+            'img_vet'           =>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nome'              => 'required',
+            'descricao'         => 'required',
             'atende_domiciliar' => 'required',
-            'telefone' => 'required',
-            'estado' => 'required',
-            'CEP' => 'required',
-            'cidade' => 'required',
-            'bairro' => 'required',
-            'rua' => 'required',
+            'telefone'          => 'required',
+            'estado'            => 'required',
+            'CEP'               => 'required',
+            'cidade'            => 'required',
+            'bairro'            => 'required',
+            'rua'               => 'required',
             'numero',
             'complemento',
 
         ]);
 
-        $itens= Veterinario::create([
+        $veterinario= Veterinario::create([
+            'email'=>$request->email,
+            'password'=>$request->password,
             'img_vet'=>$fileNameToStore,
             'nome'=>$request->nome,
             'descricao'=>mb_strtolower($request->descricao),
@@ -65,6 +75,12 @@ class VeterinarioController extends Controller
             'rua'=>$request->rua,
             'numero'=>$request->numero,
             'complemento'=>$request->complemento,
+        ]);
+
+        $veterinario_user = User::create([
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+            'isAdmin' => '2',
         ]);
 
         return redirect()->route('veterinario.index')

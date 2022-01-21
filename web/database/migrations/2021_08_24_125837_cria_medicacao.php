@@ -14,7 +14,7 @@ class CriaMedicacao extends Migration
             $table->string('medicamento', 45);
             $table->text('descricao');
             $table->string('dosagem', 50);
-            $table->integer('intervalo');
+            $table->string('intervalo');
             $table->string('data_fim');
             $table->unsignedBigInteger('animal_id');
             $table->foreign('animal_id')->references('id')->on('animal');

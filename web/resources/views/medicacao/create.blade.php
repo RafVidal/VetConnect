@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 
@@ -10,7 +10,7 @@
 <div class="row"">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Inserindo um novo medicamentos: </h2>
+            <h2>Inserindo um novo medicamento: </h2>
         </div>
     </div>
 </div>

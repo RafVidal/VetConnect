@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 
@@ -46,6 +46,15 @@
                     monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
                 })
                 </script>
+            </div>
+            <div class="form-group col-md-6 sele">
+                <strong> Status: </strong>
+                <select name="status" class="custom-select">
+                    <option> ... </option>
+                    <option> Em andamento </option>
+                    <option> Pendente </option>
+                    <option> Concluída </option>
+                </select>
             </div>
         </div>
 

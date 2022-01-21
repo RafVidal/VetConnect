@@ -12,6 +12,7 @@ class CartaoDeVacinacao extends Model
     protected $fillable = [
         'descricao',
         'data',
+        'status',
         'vacina_id',
         'animal_id',
 

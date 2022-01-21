@@ -1,4 +1,4 @@
-@extends('layout_users')
+@extends('layout_vet')
 
 @section('content')
 <div class="card shadow mb-4">
@@ -63,13 +63,15 @@
             <a  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">Cartão de Vacina</a>
             <a  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo2">Medicações</a>
         </div>
+
         <div>&nbsp;</div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="/animal"> Voltar</a>
+            <a class="btn btn-primary" href="/vet/pets"> Voltar</a>
         </div>
     </div>
     </div>
 </div>
+
 
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -86,11 +88,6 @@
                 $cartao_de_vacinacaos->animal_id==$animal->id
             )
             <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <strong>᲼᲼᲼᲼᲼᲼᲼</strong>
-                    </div>
-                </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Data da Vacina:</strong>
@@ -99,17 +96,19 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Status:</strong>
-                        {{ $cartao_de_vacinacaos->status }}
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
                         <strong>Descrição:</strong>
                         {{ $cartao_de_vacinacaos->descricao }}
                     </div>
                 </div>
-                <hr color="black" size="2" width="100%">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Status:</strong>
+                        {{ $cartao_de_vacinacaos->status }}
+                        <strong>//// ID da Vacina:</strong>
+                        {{ $cartao_de_vacinacaos->vacina_id }}
+                    </div>
+                </div>
+            <hr color="black" size="2" width="100%">
         </div>
             @endif
         @endforeach
@@ -122,7 +121,7 @@
     </div>
   </div>
 
-<div class="modal fade" id="modalExemplo2" style="max-height:600px" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalExemplo2" style="max-height:690px" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -152,11 +151,7 @@
                 <div class="form-group">
                     <strong>Dosagem:</strong>
                     {{ $medicacaos->dosagem }}
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Intervalo (Dias):</strong>
+                    <strong>//// Intervalo (Dias):</strong>
                     {{ $medicacaos->intervalo }}
                 </div>
             </div>
@@ -178,11 +173,12 @@
         @endforeach
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <div class="modal-footer ">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
-      </div>
+        </div>
     </div>
   </div>
+
 
 @endsection

@@ -1,9 +1,9 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 <div class="card shadow mb-4">
                        <div class="card-header py-3">
-                           <h6 class="m-0 font-weight-bold text-primary">Painel de Controle dos Cartões de Vacinas</h6>
+                           <h6 class="m-0 font-weight-bold text-primary">Painel de Controle do Cartão de Vacina</h6>
                        </div>
                      <div class="card-body">
 <div class="row"">
@@ -11,7 +11,7 @@
         <a class="btn btn-success" href="{{ route('cartao_de_vacinacao.create') }}"> + Novo</a>
     </div>
     <div class="pull-left">
-        <h2>᲼Cartões de Vacinação</h2>
+        <h2>᲼Cartão de Vacinação</h2>
     </div>
     </div>
 
@@ -23,18 +23,21 @@
 
     <table class="table table-bordered">
         <tr>
-            <th>Id</th>
             <th>Data da Vacina</th>
-            <th width="420px">Descrição</th>
-    <!--    <th>Vacina ID</th>
-            <th>Animal ID</th> -->
+            <th width="253px">Descrição</th>
+            <th>Status</th>
+            <th>Vacina ID</th>
+            <th>Animal ID</th>
             <th width="280px">Ações</th>
         </tr>
     @foreach ($data as $key => $value)
     <tr>
-        <td>{{ ++$i }}</td>
+
         <td>{{ $value->data}}</td>
         <td>{{ \Str::limit($value->descricao, 100) }}</td>
+        <td>{{ $value->status}}</td>
+        <td>{{ $value->vacina_id}}</td>
+        <td>{{ $value->animal_id}}</td>
 
         <td>
             <form action="{{ route('cartao_de_vacinacao.destroy',$value->id) }}" method="POST">

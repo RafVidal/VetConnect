@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layout_vet')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Painel de Controle do Veterinário!') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Você está logado!!') }} <br>
+                    {{ __('') }}
                 </div>
             </div>
         </div>

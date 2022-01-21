@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 <div class="card shadow mb-4">
@@ -48,10 +48,17 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Animal ID:</strong>
+                {{ $medicacao->animal_id }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Descrição:</strong>
                 {{ $medicacao->descricao }}
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>᲼᲼᲼᲼᲼᲼᲼</strong>

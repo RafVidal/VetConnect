@@ -9,6 +9,8 @@
 
     <title>VetConnect</title>
 
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Bootstrap CSS -->
@@ -94,15 +96,15 @@
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" href="/animal">
-                    <i class="fas fa-paw"></i>
-                    <span>Meus Pet's</span></a>
-            </li>
-
-            <li class="nav-item">
                 <a class="nav-link" href="/veterinarios">
                     <i class="fas fa-user-md"></i>
                     <span>Veterinários</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/animal">
+                    <i class="fas fa-paw"></i>
+                    <span>Meus Pet's</span></a>
             </li>
 
             <li class="nav-item">
@@ -262,8 +264,6 @@
     <script src="{{ asset('tema_adm/js/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('tema_adm/js/demo/chart-pie-demo.js') }}"></script>
     -->
-
-
 
 </body>
 </html>

@@ -13,9 +13,12 @@ use App\Http\Controllers\VeterinarioController;
 use App\Http\Controllers\VeterinarioUserController;
 use App\Http\Controllers\PetsController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\AdmAnimalController;
 use Illuminate\Support\Facades\Auth;
 
 
+
+Auth::routes();
 
 
     //=========================================================================
@@ -24,11 +27,15 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome_users');
-})->name('welcome');
+})->name('user.welcome');
 
 Route::get('/adm', function () {
     return view('welcome');
 })->name('adm.welcome');
+
+Route::get('/vet', function () {
+    return view('welcome_vet');
+})->name('vet.welcome');
 
 Route::get('/profile', function(){
     dd(Auth::user());
@@ -37,6 +44,10 @@ Route::get('/profile', function(){
 Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::resource('animal', PetsController::class);
+
+Route::get('veterinarios', [App\Http\Controllers\HomeController::class, 'veterinario']);
+Route::get('veterinarios/show/{id}', [App\Http\Controllers\HomeController::class, 'show']);
+
 
 Route::name('evento.')->prefix('/evento')->group(function(){
     Route::get('/', [App\Http\Controllers\EventoController::class, 'index']);
@@ -47,28 +58,23 @@ Route::name('evento.')->prefix('/evento')->group(function(){
     Route::post('/excluir/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
 });
 
-
-
-
     //=========================================================================
     //============================ADMS=========================================
     //=========================================================================
 
-Auth::routes();
 
-
+Route::resource('/adm/veterinario', VeterinarioController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('cartao_de_vacinacao', CartaoDeVacinacaoController::class);
+Route::resource('/vet/cartao_de_vacinacao', App\Http\Controllers\CartaoDeVacinacaoController::class);
 
-Route::resource('medicacao', MedicacaoController::class);
+Route::resource('/vet/medicacao', MedicacaoController::class);
 
-Route::resource('vacina', VacinaController::class);
+Route::resource('/vet/vacina', VacinaController::class);
 
-Route::resource('veterinario', VeterinarioController::class);
-
-Route::resource('veterinarios', VeterinarioUserController::class);
+Route::get('/vet/pets', [App\Http\Controllers\HomeController::class, 'animal']);
+Route::get('/vet/pets/{id}', [App\Http\Controllers\HomeController::class, 'show2']);
 
 
 

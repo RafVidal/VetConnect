@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_vet')
 
 @section('content')
 
@@ -47,7 +47,7 @@
 
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
-                <strong>Intervalo:</strong>
+                <strong>Intervalo (Dias):</strong>
                 <input type="text" name="intervalo" value="{{ $medicacao->intervalo }}" class="form-control" placeholder="00">
         </div>
 

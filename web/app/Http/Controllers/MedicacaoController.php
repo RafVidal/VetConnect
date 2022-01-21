@@ -47,7 +47,8 @@ class MedicacaoController extends Controller
 
     public function show(Medicacao $medicacao)
     {
-         return view('medicacao.show',compact('medicacao'));
+        $medicacao= Medicacao::all();
+        return view('medicacao.show',compact('medicacao'));
     }
 
     public function edit(Medicacao $medicacao)
@@ -65,7 +66,6 @@ class MedicacaoController extends Controller
             'dosagem' => 'required',
             'intervalo' => 'required',
             'data_fim' => 'required',
-            'animal_id' => 'required',
 
         ]);
 

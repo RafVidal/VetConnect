@@ -19,6 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
     public const MENU = '/';
+    public const VET = '/adm/veterinario';
 
     /**
      * The controller namespace for the application.
