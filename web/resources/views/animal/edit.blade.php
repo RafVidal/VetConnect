@@ -27,7 +27,7 @@
     </div>
 @endif
 
-    <form action="{{ route('animal.update',$animal->id) }}" method="POST">
+    <form action="{{ route('cliente.animal.update',$animal->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -87,7 +87,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('animal.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('cliente.animal.index') }}"> Voltar</a>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
         </div>
     </div>

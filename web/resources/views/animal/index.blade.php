@@ -40,9 +40,9 @@
             <td>{{ $value->raca }}</td>
 
             <td>
-                <form action="{{ route('animal.destroy',$value->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('animal.show',$value->id) }}">Exibir</a>
-                    <a class="btn btn-primary" href="{{ route('animal.edit',$value->id) }}">Editar</a>
+                <form action="{{ route('cliente.animal.destroy',$value->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('cliente.animal.show',$value->id) }}">Exibir</a>
+                    <a class="btn btn-primary" href="{{ route('cliente.animal.edit',$value->id) }}">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Excluir</button>
