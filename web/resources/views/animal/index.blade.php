@@ -8,7 +8,7 @@
                      <div class="card-body">
 <div class="row"">
     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-        <a class="btn btn-success" href="{{ route('animal.create') }}"> + Novo</a>
+        <a class="btn btn-success" href="{{ route('cliente.animal.create') }}"> + Novo</a>
     </div>
     <div class="pull-left">
         <h2>᲼Meus Pet's</h2>
@@ -40,9 +40,9 @@
             <td>{{ $value->raca }}</td>
 
             <td>
-                <form action="{{ route('animal.destroy',$value->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('animal.show',$value->id) }}">Exibir</a>
-                    <a class="btn btn-primary" href="{{ route('animal.edit',$value->id) }}">Editar</a>
+                <form action="{{ route('cliente.animal.destroy',$value->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('cliente.animal.show',$value->id) }}">Exibir</a>
+                    <a class="btn btn-primary" href="{{ route('cliente.animal.edit',$value->id) }}">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Excluir</button>

@@ -29,7 +29,7 @@
     </div>
 @endif
 
-<form action="{{ route('animal.store') }}" method="POST" class="container was-validated" novalidate="" enctype="multipart/form-data">
+<form action="{{ route('cliente.animal.store') }}" method="POST" class="container was-validated" novalidate="" enctype="multipart/form-data">
     @csrf
 
     <div class="row">
@@ -109,7 +109,7 @@
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('animal.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('cliente.animal.index') }}"> Voltar</a>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
     </div>
