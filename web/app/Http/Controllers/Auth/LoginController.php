@@ -38,10 +38,20 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
 
-            // Authentication passed...
-            //dd(Auth::user());
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            $user = auth()->user();
+            switch($user->isAdmin){
+                case 0:
+                    return redirect()->intended('/');
+                    break;
+                case 1:
+                    return redirect()->intended('/adm');
+                    break;
+                case 2:
+                    return redirect()->intended('/vet');
+                    break;
+                }
+            return redirect()->intended('/adm');
         }
 
         return back()->withErrors([

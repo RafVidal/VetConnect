@@ -36,13 +36,13 @@ Route::name('cliente.')->prefix('/')->middleware('auth.cliente')->group(function
         Route::put('/update/{id}',      [PetsController::class, 'update'])->name('update');
         Route::delete('/destroy/{id}',  [PetsController::class, 'destroy'])->name('destroy');
     });
-    
+
     Route::resource('animal', PetsController::class);
-    
+
     Route::get('veterinarios', [App\Http\Controllers\HomeController::class, 'veterinario']);
     Route::get('veterinarios/show/{id}', [App\Http\Controllers\HomeController::class, 'show']);
-    
-    
+
+
     Route::name('evento.')->prefix('evento')->group(function(){
         Route::get('/', [App\Http\Controllers\EventoController::class, 'index']);
         Route::get('/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
