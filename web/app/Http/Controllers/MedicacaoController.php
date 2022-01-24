@@ -11,8 +11,9 @@ class MedicacaoController extends Controller
     public function index()
     {
         $data = Medicacao::latest()->paginate(5);
-        return view ('medicacao.index',compact('data'))
-        ->with('i',(request()->input('page', 1) - 1) * 5);
+        $data['animais'] = App\Models\Animal::all();
+        return view ('medicacao.index', $data);
+        //->with('i',(request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
