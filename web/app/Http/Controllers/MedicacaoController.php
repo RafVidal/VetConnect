@@ -41,7 +41,7 @@ class MedicacaoController extends Controller
             'animal_id'=>$request->animal_id,
         ]);
 
-        return redirect()->route('medicacao.index')
+        return redirect()->route('vet.medicacao.index')
                         ->with('success','Medicação adicionada com sucesso');
     }
 
@@ -71,7 +71,7 @@ class MedicacaoController extends Controller
 
         $medicacao -> update($request->all());
 
-        return redirect()->route('medicacao.index')
+        return redirect()->route('vet.medicacao.index')
                         ->with('success','Medicação atualizada com sucesso! ');
     }
 
@@ -80,7 +80,7 @@ class MedicacaoController extends Controller
 
        $medicacao->delete();
 
-       return redirect()->route('medicacao.index')
+       return redirect()->route('vet.medicacao.index')
                         ->with('success','A exclusão foi um sucesso!');
     }
 }

@@ -37,7 +37,7 @@ class VacinaController extends Controller
             'obrigatoria'=>$request->obrigatoria,
         ]);
 
-        return redirect()->route('vacina.index')
+        return redirect()->route('vet.vacina.index')
                         ->with('success','Vacina adicionada com sucesso');
     }
 
@@ -64,7 +64,7 @@ class VacinaController extends Controller
 
         $vacina -> update($request->all());
 
-        return redirect()->route('vacina.index')
+        return redirect()->route('vet.vacina.index')
                         ->with('success','Vacina atualizada com sucesso! ');
     }
 
@@ -73,7 +73,7 @@ class VacinaController extends Controller
 
        $vacina->delete();
 
-       return redirect()->route('vacina.index')
+       return redirect()->route('vet.vacina.index')
                         ->with('success','A exclusão foi um sucesso!');
     }
 }

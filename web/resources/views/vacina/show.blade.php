@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('vacina.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('vet.vacina.index') }}"> Voltar</a>
         </div>
     </div>
     </div>

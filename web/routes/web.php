@@ -63,6 +63,14 @@ Route::name('adm.')->prefix('/adm')->middleware('auth.adm')->group(function(){
     Route::get('/', function () {
         return view('welcome');
     })->name('welcome');
+    Route::name('veterinario.')->prefix('veterinario')->group(function(){
+        Route::get('/index',            [VeterinarioController::class, 'index'])->name('index');
+        Route::get('/create',           [VeterinarioController::class, 'create'])->name('create');
+        Route::post('/store',           [VeterinarioController::class, 'store'])->name('store');
+        Route::get('/show/{id}',        [VeterinarioController::class, 'show'])->name('show');
+        Route::put('/update/{id}',      [VeterinarioController::class, 'update'])->name('update');
+        Route::delete('/destroy/{id}',  [VeterinarioController::class, 'destroy'])->name('destroy');
+    });
     Route::resource('/veterinario', VeterinarioController::class);
 });
 

@@ -27,7 +27,7 @@
     </div>
 @endif
 
-    <form action="{{ route('veterinario.update',$veterinario->id) }}" method="POST">
+    <form action="{{ route('adm.veterinario.update',$veterinario->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -48,8 +48,37 @@
                 <input type="text" name="cidade" value="{{ $veterinario->cidade }}" class="form-control" placeholder="Nome">
             </div>
             <div class="form-group col-md-6">
-                <strong>Estado:</strong>
-                <input type="text" name="estado" value="{{ $veterinario->estado }}" class="form-control" placeholder="Telefone">
+                <strong> Estado </strong>
+                <select name="estado" class="custom-select" required>
+                    <option value=""> ... </option>
+                    <option> AC </option>
+                    <option> AL </option>
+                    <option> AP </option>
+                    <option> AM </option>
+                    <option> BA </option>
+                    <option> CE </option>
+                    <option> DF </option>
+                    <option> ES </option>
+                    <option> GO </option>
+                    <option> MA </option>
+                    <option> MT </option>
+                    <option> MS </option>
+                    <option> MG </option>
+                    <option> PA </option>
+                    <option> PB </option>
+                    <option> PR </option>
+                    <option> PE </option>
+                    <option> PI </option>
+                    <option> RJ </option>
+                    <option> RN </option>
+                    <option> RS </option>
+                    <option> RO </option>
+                    <option> RR </option>
+                    <option> SC </option>
+                    <option> SP </option>
+                    <option> SE </option>
+                    <option> TO </option>
+                </select>
             </div>
         </div>
 
@@ -97,7 +126,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('veterinario.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('adm.veterinario.index') }}"> Voltar</a>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
         </div>
     </div>

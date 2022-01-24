@@ -62,7 +62,7 @@ class PetsController extends Controller
 
         ]);
 
-        return redirect()->route('animal.index')
+        return redirect()->route('cliente.animal.index')
                         ->with('success','Pet adicionado com sucesso');
     }
 
@@ -94,7 +94,7 @@ class PetsController extends Controller
 
         $animal -> update($request->all());
 
-        return redirect()->route('animal.index')
+        return redirect()->route('cliente.animal.index')
                         ->with('success','Pet atualizado com sucesso! ');
     }
 
@@ -104,7 +104,7 @@ class PetsController extends Controller
 
        $animal->delete();
 
-       return redirect()->route('animal.index')
+       return redirect()->route('cliente.animal.index')
                         ->with('success','A exclusão foi um sucesso!');
     }
 }

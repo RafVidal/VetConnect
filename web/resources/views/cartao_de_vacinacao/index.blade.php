@@ -8,7 +8,7 @@
                      <div class="card-body">
 <div class="row"">
     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-        <a class="btn btn-success" href="{{ route('cartao_de_vacinacao.create') }}"> + Novo</a>
+        <a class="btn btn-success" href="{{ route('vet.cartao_de_vacinacao.create') }}"> + Novo</a>
     </div>
     <div class="pull-left">
         <h2>᲼Cartão de Vacinação</h2>
@@ -40,9 +40,9 @@
         <td>{{ $value->animal_id}}</td>
 
         <td>
-            <form action="{{ route('cartao_de_vacinacao.destroy',$value->id) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('cartao_de_vacinacao.show',$value->id) }}">Exibir</a>
-                <a class="btn btn-primary" href="{{ route('cartao_de_vacinacao.edit',$value->id) }}">Editar</a>
+            <form action="{{ route('vet.cartao_de_vacinacao.destroy',$value->id) }}" method="POST">
+                <a class="btn btn-info" href="{{ route('vet.cartao_de_vacinacao.show',$value->id) }}">Exibir</a>
+                <a class="btn btn-primary" href="{{ route('vet.cartao_de_vacinacao.edit',$value->id) }}">Editar</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Excluir</button>
