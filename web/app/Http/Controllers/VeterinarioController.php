@@ -78,6 +78,7 @@ class VeterinarioController extends Controller
         ]);
 
         $veterinario_user = User::create([
+            'veterinario_id' => $veterinario->id,
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'isAdmin' => '2',

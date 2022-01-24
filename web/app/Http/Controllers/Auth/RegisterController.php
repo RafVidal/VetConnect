@@ -56,9 +56,11 @@ class RegisterController extends Controller
         $cliente->save();
 
         return User::create([
+            'cliente_id' => $cliente->id,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'isAdmin' => '0',
+            
         ]);
     }
 }

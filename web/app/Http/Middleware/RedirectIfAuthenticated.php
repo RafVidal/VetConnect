@@ -20,7 +20,25 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/');
+            $user = auth()->user();
+            switch($user->isAdmin){
+                case 0:
+                    return redirect('/');
+                    break;
+                case 1:
+                    return redirect('/adm');
+                    break;
+                case 2:
+                    return redirect('/vet');
+                    break;
+                default:
+                    Auth::logout();
+                    $request->session()->invalidate();
+                    $request->session()->regenerateToken();
+                    return abort('403');
+                    break;
+            }
+            
         }
 
         return $next($request);
