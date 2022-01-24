@@ -31,6 +31,7 @@ Route::name('cliente.')->prefix('/')->middleware('auth.cliente')->group(function
 
     Route::name('animal.')->prefix('animal')->group(function(){
         Route::get('/index',            [PetsController::class, 'index'])->name('index');
+        Route::get('/create',           [PetsController::class, 'create'])->name('create');
         Route::post('/store',           [PetsController::class, 'store'])->name('store');
         Route::get('/show/{id}',        [PetsController::class, 'show'])->name('show');
         Route::put('/update/{id}',      [PetsController::class, 'update'])->name('update');

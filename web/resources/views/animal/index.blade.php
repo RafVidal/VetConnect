@@ -8,7 +8,7 @@
                      <div class="card-body">
 <div class="row"">
     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-        <a class="btn btn-success" href="{{ route('animal.create') }}"> + Novo</a>
+        <a class="btn btn-success" href="{{ route('cliente.animal.create') }}"> + Novo</a>
     </div>
     <div class="pull-left">
         <h2>᲼Meus Pet's</h2>

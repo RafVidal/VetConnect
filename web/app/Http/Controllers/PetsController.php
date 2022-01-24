@@ -19,7 +19,7 @@ class PetsController extends Controller
 
     public function create()
     {
-        return view ('animal.create');
+        return view('animal.create');
     }
 
     public function store(Request $request)
