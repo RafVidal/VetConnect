@@ -28,6 +28,14 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::name('cliente.')->prefix('/')->middleware('auth.cliente')->group(function(){
     Route::get('', function () {return view('welcome_users');})->name('welcome');
+
+    Route::name('animal.')->prefix('animal')->group(function(){
+        Route::get('/index',            [PetsController::class, 'index'])->name('index');
+        Route::post('/store',           [PetsController::class, 'store'])->name('store');
+        Route::get('/show/{id}',        [PetsController::class, 'show'])->name('show');
+        Route::put('/update/{id}',      [PetsController::class, 'update'])->name('update');
+        Route::delete('/destroy/{id}',  [PetsController::class, 'destroy'])->name('destroy');
+    });
     
     Route::resource('animal', PetsController::class);
     
