@@ -11,14 +11,15 @@ class MedicacaoController extends Controller
     public function index()
     {
         $data = Medicacao::latest()->paginate(5);
-        $data['animais'] = App\Models\Animal::all();
+        
         return view ('medicacao.index', $data);
         //->with('i',(request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view ('medicacao.create');
+        $data['animais'] = App\Models\Animal::all();
+        return view ('medicacao.create', $data);
     }
 
     public function store(Request $request)
