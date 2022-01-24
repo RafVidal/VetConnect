@@ -69,8 +69,8 @@ class PetsController extends Controller
     public function show($id)
     {
         $animal = Animal::findorfail ($id);
-        $cartao_de_vacinacao= CartaoDeVacinacao::all();
-        $medicacao= Medicacao::all();
+        $cartao_de_vacinacao= CartaoDeVacinacao::where('animal', $id)->get();
+        $medicacao= Medicacao::where('animal', $id)->get();
         return view('animal.show',['cartao_de_vacinacao'=>$cartao_de_vacinacao,'medicacao'=>$medicacao,'animal'=>$animal]);
     }
 
