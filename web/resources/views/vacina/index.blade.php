@@ -8,7 +8,7 @@
                      <div class="card-body">
 <div class="row"">
     <div class="col-xs-12 col-sm-12 col-md-12 text-right">
-        <a class="btn btn-success" href="{{ route('vacina.create') }}"> + Novo</a>
+        <a class="btn btn-success" href="{{ route('vet.vacina.create') }}"> + Novo</a>
     </div>
     <div class="pull-left">
         <h2>᲼Vacinas</h2>
@@ -32,16 +32,16 @@
         </tr>
         @foreach ($data as $key => $value)
         <tr>
-            <td>{{ ++$i }}</td>
+            <td>{{ $value->id }}</td>
             <td>{{ $value->nome}}</td>
             <td>{{ $value->idade_animal}}</td>
             <td>{{ \Str::limit($value->descricao, 100) }}</td>
             <td>{{ $value->obrigatoria }}</td>
 
             <td>
-                <form action="{{ route('vacina.destroy',$value->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('vacina.show',$value->id) }}">Exibir</a>
-                    <a class="btn btn-primary" href="{{ route('vacina.edit',$value->id) }}">Editar</a>
+                <form action="{{ route('vet.vacina.destroy',$value->id) }}" method="POST">
+                    <a class="btn btn-info" href="{{ route('vet.vacina.show',$value->id) }}">Exibir</a>
+                    <a class="btn btn-primary" href="{{ route('vet.vacina.edit',$value->id) }}">Editar</a>
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Excluir</button>

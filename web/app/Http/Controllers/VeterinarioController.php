@@ -84,7 +84,7 @@ class VeterinarioController extends Controller
             'isAdmin' => '2',
         ]);
 
-        return redirect()->route('veterinario.index')
+        return redirect()->route('adm.veterinario.index')
                         ->with('success','Veterinário adicionado com sucesso');
     }
 
@@ -118,7 +118,7 @@ class VeterinarioController extends Controller
 
         $veterinario -> update($request->all());
 
-        return redirect()->route('veterinario.index')
+        return redirect()->route('adm.veterinario.index')
                         ->with('success','Veterinario atualizado com sucesso! ');
     }
 
@@ -128,7 +128,7 @@ class VeterinarioController extends Controller
 
         $veterinario->delete();
 
-        return redirect()->route('veterinario.index')
+        return redirect()->route('adm.veterinario.index')
                         ->with('success','A exclusão foi um sucesso!');
     }
 }

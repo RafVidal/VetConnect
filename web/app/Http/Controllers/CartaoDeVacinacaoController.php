@@ -40,7 +40,7 @@ class CartaoDeVacinacaoController extends Controller
 
         ]);
 
-        return redirect()->route('cartao_de_vacinacao.index')
+        return redirect()->route('vet.cartao_de_vacinacao.index')
                         ->with('success','Cartão de Vacina adicionado com sucesso');
     }
 
@@ -67,7 +67,7 @@ class CartaoDeVacinacaoController extends Controller
 
         $cartao_de_vacinacao -> update($request->all());
 
-        return redirect()->route('cartao_de_vacinacao.index')
+        return redirect()->route('vet.cartao_de_vacinacao.index')
                         ->with('success','Cartão de Vacina atualizado com sucesso! ');
     }
 
@@ -76,7 +76,7 @@ class CartaoDeVacinacaoController extends Controller
 
        $cartao_de_vacinacao->delete();
 
-       return redirect()->route('cartao_de_vacinacao.index')
+       return redirect()->route('vet.cartao_de_vacinacao.index')
                         ->with('success','A exclusão foi um sucesso!');
     }
 }

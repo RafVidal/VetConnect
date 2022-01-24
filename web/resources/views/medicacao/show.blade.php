@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('medicacao.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('vet.medicacao.index') }}"> Voltar</a>
         </div>
     </div>
     </div>

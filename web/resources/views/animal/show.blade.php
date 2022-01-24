@@ -60,8 +60,8 @@
         </div>
         <div>&nbsp;</div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">Cartão de Vacina</a>
-            <a  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo2">Medicações</a>
+            <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo" {{count($cartao_de_vacinacao) > 0 ? '' : 'disabled'}}>Cartão de Vacina</button>
+            <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo2" {{count($medicacao) > 0 ? '' : 'disabled'}}>Medicações</button>
         </div>
         <div>&nbsp;</div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

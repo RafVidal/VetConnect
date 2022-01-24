@@ -27,7 +27,7 @@
     </div>
 @endif
 
-    <form action="{{ route('cartao_de_vacinacao.update',$cartao_de_vacinacao->id) }}" method="POST">
+    <form action="{{ route('vet.cartao_de_vacinacao.update',$cartao_de_vacinacao->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <a class="btn btn-primary" href="{{ route('cartao_de_vacinacao.index') }}"> Voltar</a>
+            <a class="btn btn-primary" href="{{ route('vet.cartao_de_vacinacao.index') }}"> Voltar</a>
                 <button type="submit" class="btn btn-primary">Atualizar</button>
         </div>
     </div>
