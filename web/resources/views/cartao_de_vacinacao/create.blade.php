@@ -70,12 +70,22 @@
 
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
-                <strong>Vacina ID:</strong>
-                <input type="text" name="vacina_id" id="vacina_id" class="form-control is-valid" placeholder="ID do vacina" required>
+                <strong>Vacina:</strong>
+                <select  name="vacina_id" class="form-control is-valid" required>
+                    <option>...</option>
+                    @foreach($vacinas as $vacina)
+                        <option value="{{$vacina->id}}">{{"ID: " .$vacina->id. " | Nome: " .$vacina->nome}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group col-md-6">
-                <strong>Animal ID:</strong>
-                <input type="text" name="animal_id" id="animal_id" class="form-control is-valid" placeholder="ID do animal" required>
+                <strong>Animal:</strong>
+                <select  name="animal_id" class="form-control is-valid" required>
+                    <option>...</option>
+                    @foreach($animais as $animal)
+                        <option value="{{$animal->id}}">{{$animal->nome. " | Dono: " .$animal->cliente->nome}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
 

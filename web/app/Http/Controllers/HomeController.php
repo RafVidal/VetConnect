@@ -41,8 +41,8 @@ class HomeController extends Controller
     public function show2($id)
     {
         $animal = Animal::findorfail ($id);
-        $cartao_de_vacinacao= CartaoDeVacinacao::all();
-        $medicacao= Medicacao::all();
+        $cartao_de_vacinacao= CartaoDeVacinacao::where('animal_id', $id)->get();
+        $medicacao= Medicacao::where('animal_id', $id)->get();
         return view('vet_animal.show',['cartao_de_vacinacao'=>$cartao_de_vacinacao,'medicacao'=>$medicacao,'animal'=>$animal]);
     }
 

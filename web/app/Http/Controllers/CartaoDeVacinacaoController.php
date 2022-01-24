@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\CartaoDeVacinacao;
+use App\Models\Animal;
+use App\Models\Vacina;
 use Illuminate\Http\Request;
 
 class CartaoDeVacinacaoController extends Controller
@@ -17,7 +19,9 @@ class CartaoDeVacinacaoController extends Controller
 
     public function create()
     {
-        return view ('cartao_de_vacinacao.create');
+        $data['vacinas'] = Vacina::all();
+        $data['animais'] = Animal::all();
+        return view ('cartao_de_vacinacao.create', $data);
     }
 
     public function store(Request $request)
@@ -52,7 +56,9 @@ class CartaoDeVacinacaoController extends Controller
 
     public function edit(CartaoDeVacinacao $cartao_de_vacinacao)
     {
-        return view('cartao_de_vacinacao.edit',compact('cartao_de_vacinacao'));
+        $data['vacinas'] = Vacina::all();
+        $data['animais'] = Animal::all();
+        return view('cartao_de_vacinacao.edit',['cartao_de_vacinacao'=>$cartao_de_vacinacao] ,$data);
 
     }
 

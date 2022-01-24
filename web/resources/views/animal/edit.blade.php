@@ -40,7 +40,7 @@
             <div class="form-group col-md-6 sele">
                 <strong> Espécie: </strong>
                 <select name="especie" class="custom-select">
-                    <option> Espécies... </option>
+                    <option> ... </option>
                     <option> Cachorro </option>
                     <option> Gato </option>
                     <option> Furão </option>

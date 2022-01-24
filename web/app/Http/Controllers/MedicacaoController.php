@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medicacao;
+use App\Models\Animal;
 use Illuminate\Http\Request;
 
 class MedicacaoController extends Controller
@@ -11,14 +12,13 @@ class MedicacaoController extends Controller
     public function index()
     {
         $data = Medicacao::latest()->paginate(5);
-        
-        return view ('medicacao.index', $data);
-        //->with('i',(request()->input('page', 1) - 1) * 5);
+        return view ('medicacao.index',compact('data'))
+        ->with('i',(request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        $data['animais'] = App\Models\Animal::all();
+        $data['animais'] = Animal::all();
         return view ('medicacao.create', $data);
     }
 
@@ -55,7 +55,8 @@ class MedicacaoController extends Controller
 
     public function edit(Medicacao $medicacao)
     {
-        return view('medicacao.edit',compact('medicacao'));
+        $data['animais'] = Animal::all();
+        return view('medicacao.edit',['medicacao'=>$medicacao] ,$data);
 
     }
 

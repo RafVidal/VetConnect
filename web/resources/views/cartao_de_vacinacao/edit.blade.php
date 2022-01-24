@@ -58,12 +58,35 @@
             </div>
         </div>
 
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group ">
                 <strong>Descrição:</strong>
                 <textarea class="form-control" style="height:40px" name="descricao" placeholder="Insira a descrição"> {{ $cartao_de_vacinacao->descricao}} </textarea>
             </div>
         </div>
+
+        <div class="form-row col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group col-md-6">
+                <strong>Vacina:</strong>
+                <select  name="vacina_id" class="form-control">
+                    <option>...</option>
+                    @foreach($vacinas as $vacina)
+                        <option value="{{$vacina->id}}">{{"ID: " .$vacina->id. " | Nome: " .$vacina->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <strong>Animal:</strong>
+                <select name="animal_id" class="form-control">
+                    <option>...</option>
+                    @foreach($animais as $animal)
+                        <option value="{{$animal->id}}">{{$animal->nome. " | Dono: " .$animal->cliente->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn btn-primary" href="{{ route('vet.cartao_de_vacinacao.index') }}"> Voltar</a>
                 <button type="submit" class="btn btn-primary">Atualizar</button>

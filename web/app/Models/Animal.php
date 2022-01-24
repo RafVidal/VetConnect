@@ -24,8 +24,7 @@ class Animal extends Model
     protected $table = 'animal';
     public $timestamps = false;
 
-    public function _cliente(){
-        $this->hasOne('App/Models/Cliente',
-                'id', 'cliente_id');
+    public function cliente(){
+        return $this->hasOne(Cliente::class, 'id', 'cliente_id');
     }
 }

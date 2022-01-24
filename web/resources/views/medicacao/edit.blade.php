@@ -43,12 +43,10 @@
                 <strong>Dosagem:</strong>
                 <input type="text" name="dosagem" value="{{ $medicacao->dosagem }}" class="form-control" placeholder="00">
             </div>
-        </div>
-
-        <div class="form-row col-xs-12 col-sm-12 col-md-12">
             <div class="form-group col-md-6">
                 <strong>Intervalo (Dias):</strong>
                 <input type="text" name="intervalo" value="{{ $medicacao->intervalo }}" class="form-control" placeholder="00">
+            </div>
         </div>
 
         <div class="form-row col-xs-12 col-sm-12 col-md-12">
@@ -67,7 +65,18 @@
                 })
                 </script>
             </div>
+            <div class="form-group col-md-6">
+                <strong>Animal:</strong>
+                <select name="animal_id" class="form-control">
+                    <option>...</option>
+                    @foreach($animais as $animal)
+                        <option value="{{$animal->id}}">{{$animal->nome. " | Dono: " .$animal->cliente->nome}}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
+
+
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group ">

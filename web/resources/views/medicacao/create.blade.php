@@ -66,11 +66,11 @@
                 </script>
             </div>
             <div class="form-group col-md-6">
-                <strong>Animal</strong>
-                <select type="text" name="animal_id" class="form-control is-valid" required>
+                <strong>Animal:</strong>
+                <select  name="animal_id" class="form-control is-valid" required>
                     <option>...</option>
                     @foreach($animais as $animal)
-                        <option value="{{$animal->id}}">{{$animal->nome. " | Dono: " $animal->cliente->nome}}</option>
+                        <option value="{{$animal->id}}">{{$animal->nome. " | Dono: " .$animal->cliente->nome}}</option>
                     @endforeach
                 </select>
             </div>
