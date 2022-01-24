@@ -12,7 +12,7 @@ class PetsController extends Controller
 
     public function index()
     {
-        $data = Animal::latest()->paginate(5);
+        $data = Animal::where('cliente_id', auth()->user()->cliente->id)->latest()->paginate(5);
         return view ('animal.index',compact('data'))
         ->with('i',(request()->input('page', 1) - 1) * 5);
     }
